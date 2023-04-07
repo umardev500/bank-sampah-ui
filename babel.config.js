@@ -9,7 +9,7 @@ module.exports = {
           // This needs to be mirrored in tsconfig.json
           components: './src/components',
           assets: './assets',
-          constants: './constants',
+          constants: './src/constants',
         },
         extensions: [
           '.ios.js',
