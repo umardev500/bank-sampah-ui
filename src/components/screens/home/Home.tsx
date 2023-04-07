@@ -1,4 +1,4 @@
-import {Heading} from 'components/organisms';
+import {BalanceCard, Heading} from 'components/organisms';
 import {colors} from 'constants/colors';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
@@ -7,6 +7,7 @@ export const Home: React.FC = () => {
   return (
     <View style={styles.container}>
       <Heading />
+      <BalanceCard />
     </View>
   );
 };
