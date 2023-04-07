@@ -7,11 +7,12 @@ import {
 } from 'components/organisms';
 import {colors} from 'constants/colors';
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 
 export const Home: React.FC = () => {
   return (
     <ScrollView>
+      <StatusBar />
       <View style={styles.container}>
         <Heading />
         <BalanceCard />

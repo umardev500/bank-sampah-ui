@@ -1,25 +1,30 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
 
-export const HistoryListing: React.FC = () => {
+interface Props {
+  item: {
+    name: string;
+    price: string;
+    photo: ImageSourcePropType;
+  };
+}
+
+export const HistoryListing: React.FC<Props> = ({item}) => {
   return (
     <View style={styles.container}>
       {/* Left side */}
       <View style={styles.left}>
-        <Image
-          style={styles.image}
-          source={require('assets/avatars/avatar.png')}
-        />
+        <Image style={styles.image} source={item.photo} />
       </View>
 
       {/* Right */}
       <View style={styles.right}>
         <View style={styles.info}>
-          <Text style={styles.name}>Sarah Jhonson</Text>
-          <Text style={styles.time}>08:25 Payment Received</Text>
+          <Text style={styles.name}>{item.name}</Text>
+          <Text style={styles.time}>08:25 Payment complete</Text>
         </View>
-        <Text style={styles.price}>+ Rp5.000</Text>
+        <Text style={styles.price}>+ Rp{item.price}</Text>
       </View>
     </View>
   );

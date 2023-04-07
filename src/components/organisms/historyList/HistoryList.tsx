@@ -11,9 +11,34 @@ export const HistoryList: React.FC = () => {
 
       {/* List */}
       <View style={styles.list}>
-        <HistoryListing />
-        <HistoryListing />
-        <HistoryListing />
+        <HistoryListing
+          item={{
+            photo: require('assets/avatars/avatar-5.png'),
+            name: 'Sarah Jhonson',
+            price: '5.000',
+          }}
+        />
+        <HistoryListing
+          item={{
+            photo: require('assets/avatars/avatar-4.png'),
+            name: 'Mark',
+            price: '3.000',
+          }}
+        />
+        <HistoryListing
+          item={{
+            photo: require('assets/avatars/avatar-3.png'),
+            name: 'Shawley Cheese',
+            price: '1.000',
+          }}
+        />
+        <HistoryListing
+          item={{
+            photo: require('assets/avatars/avatar-6.png'),
+            name: 'Cellin Dion',
+            price: '8.500',
+          }}
+        />
       </View>
     </View>
   );
