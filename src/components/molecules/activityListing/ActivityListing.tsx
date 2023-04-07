@@ -29,7 +29,6 @@ const styles = StyleSheet.create({
     borderColor: colors.gray.gray100,
     flexDirection: 'row',
     gap: 16,
-    elevation: 0.5,
   },
   thumb: {
     borderRadius: 8,

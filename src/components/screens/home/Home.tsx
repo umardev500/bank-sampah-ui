@@ -12,7 +12,7 @@ import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
 export const Home: React.FC = () => {
   return (
     <ScrollView>
-      <StatusBar />
+      <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
       <View style={styles.container}>
         <Heading />
         <BalanceCard />
