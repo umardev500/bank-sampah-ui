@@ -1,3 +1,4 @@
+import {colors} from 'constants/colors';
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 
@@ -28,12 +29,15 @@ const styles = StyleSheet.create({
   avatar: {
     width: 50,
     height: 50,
+    borderRadius: 50,
   },
   hi: {
     fontSize: 16,
+    color: colors.gray.gray500,
   },
   welcome: {
     fontSize: 28,
     fontWeight: '700',
+    color: colors.gray.gray600,
   },
 });
