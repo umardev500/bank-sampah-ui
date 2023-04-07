@@ -1,4 +1,5 @@
 import {
+  ActivityList,
   BalanceCard,
   Heading,
   HistoryList,
@@ -16,6 +17,7 @@ export const Home: React.FC = () => {
         <BalanceCard />
         <MenuList />
         <HistoryList />
+        <ActivityList />
       </View>
     </ScrollView>
   );
@@ -27,5 +29,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     paddingLeft: 16,
     paddingRight: 16,
+    paddingBottom: 16,
   },
 });
