@@ -17,7 +17,7 @@ export const HistoryListing: React.FC = () => {
       <View style={styles.right}>
         <View style={styles.info}>
           <Text style={styles.name}>Sarah Jhonson</Text>
-          <Text>08:25 Payment Received</Text>
+          <Text style={styles.time}>08:25 Payment Received</Text>
         </View>
         <Text style={styles.price}>+ Rp5.000</Text>
       </View>
@@ -55,6 +55,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.gray.gray500,
     fontWeight: '500',
+  },
+  time: {
+    color: colors.gray.gray400,
   },
   desc: {
     color: colors.gray.gray400,
