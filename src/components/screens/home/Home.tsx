@@ -6,16 +6,18 @@ import {
 } from 'components/organisms';
 import {colors} from 'constants/colors';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 
 export const Home: React.FC = () => {
   return (
-    <View style={styles.container}>
-      <Heading />
-      <BalanceCard />
-      <MenuList />
-      <HistoryList />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Heading />
+        <BalanceCard />
+        <MenuList />
+        <HistoryList />
+      </View>
+    </ScrollView>
   );
 };
 
