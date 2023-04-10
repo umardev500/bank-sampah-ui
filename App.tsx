@@ -3,14 +3,17 @@ import {RootNavigation} from 'components/organisms';
 import React from 'react';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {StyleSheet} from 'react-native';
+import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 
 function App(): JSX.Element {
   return (
-    <NavigationContainer>
-      <GestureHandlerRootView style={styles.container}>
-        <RootNavigation />
-      </GestureHandlerRootView>
-    </NavigationContainer>
+    <GestureHandlerRootView style={styles.container}>
+      <BottomSheetModalProvider>
+        <NavigationContainer>
+          <RootNavigation />
+        </NavigationContainer>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 }
 

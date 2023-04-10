@@ -13,11 +13,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 export const Home: React.FC = () => {
   return (
     <ScrollView>
-      <StatusBar
-        translucent
-        backgroundColor={'transparent'}
-        barStyle={'dark-content'}
-      />
+      <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} />
       <View style={styles.container}>
         <SafeAreaView>
           <Heading />
