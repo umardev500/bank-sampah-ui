@@ -10,6 +10,7 @@ import {
 import {colors} from 'constants/colors';
 import React, {useEffect, useRef} from 'react';
 import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const Home: React.FC = () => {
   const topUpModalRef = useRef<BottomSheetModal>(null);
@@ -22,13 +23,19 @@ export const Home: React.FC = () => {
     <>
       <BottomSheetModalProvider>
         <ScrollView>
-          <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
+          <StatusBar
+            translucent
+            backgroundColor={'transparent'}
+            barStyle={'dark-content'}
+          />
           <View style={styles.container}>
-            <Heading />
-            <BalanceCard />
-            <MenuList />
-            <HistoryList />
-            <ActivityList />
+            <SafeAreaView>
+              <Heading />
+              <BalanceCard />
+              <MenuList />
+              <HistoryList />
+              <ActivityList />
+            </SafeAreaView>
           </View>
         </ScrollView>
         <TopUpBottomSheet ref={topUpModalRef} />
