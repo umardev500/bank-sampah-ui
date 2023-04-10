@@ -1,7 +1,8 @@
 import {BottomSheetModal} from '@gorhom/bottom-sheet';
+import {useNavigation} from '@react-navigation/native';
 import {TopUpListing} from 'components/molecules';
 import {colors} from 'constants/colors';
-import React, {useMemo} from 'react';
+import React, {useCallback, useMemo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 interface Props {
@@ -11,6 +12,11 @@ interface Props {
 export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
   (props, ref) => {
     const snapPoints = useMemo(() => ['25%', '50%'], []);
+    const navigation = useNavigation();
+
+    const handleBalanceClick = useCallback(() => {
+      navigation.navigate('balanceTopUp');
+    }, []);
 
     return (
       <BottomSheetModal
@@ -22,7 +28,7 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
           <Text style={styles.label}>Pilih Layanan</Text>
 
           <View style={styles.list}>
-            <TopUpListing title="Saldo" />
+            <TopUpListing onPress={handleBalanceClick} title="Saldo" />
             <TopUpListing title="PLN" />
             <TopUpListing title="Pulsa" />
           </View>

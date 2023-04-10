@@ -4,11 +4,12 @@ import {Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 interface Props {
   title: string;
+  onPress?: () => void;
 }
 
-export const TopUpListing: React.FC<Props> = ({title}) => {
+export const TopUpListing: React.FC<Props> = ({title, onPress}) => {
   return (
-    <TouchableOpacity style={styles.item}>
+    <TouchableOpacity style={styles.item} onPress={onPress}>
       <View style={styles.itemRight}>
         <Text style={styles.title}>{title}</Text>
         <Image source={require('assets/icons/arrow-right.png')} />
