@@ -15,15 +15,17 @@ interface Props {
   source: ImageSourcePropType;
   text: string;
   containerStyle?: StyleProp<ViewStyle>;
+  onPress?: () => void;
 }
 
 export const MenuListing: React.FC<Props> = ({
   source,
   text,
   containerStyle,
+  onPress,
 }) => {
   return (
-    <TouchableOpacity style={containerStyle} onPress={() => {}}>
+    <TouchableOpacity style={containerStyle} onPress={onPress}>
       <View style={styles.iconContainer}>
         <Image style={styles.icon} source={source} />
       </View>
