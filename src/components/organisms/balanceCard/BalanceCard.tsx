@@ -5,16 +5,19 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 export const BalanceCard: React.FC = () => {
   return (
     <View style={styles.card}>
-      <View style={styles.label}>
-        <Text style={styles.labelText}>Balance</Text>
-        <TouchableOpacity onPress={() => console.log('clicked')}>
-          <Image
-            style={styles.dots}
-            source={require('assets/icons/dots-vertical.png')}
-          />
-        </TouchableOpacity>
+      <View>
+        <View style={styles.label}>
+          <Text style={styles.labelText}>Balance</Text>
+          <TouchableOpacity onPress={() => console.log('clicked')}>
+            <Image
+              style={styles.dots}
+              source={require('assets/icons/dots-vertical.png')}
+            />
+          </TouchableOpacity>
+        </View>
+        <Text style={styles.balance}>IDR 50.000</Text>
       </View>
-      <Text style={styles.balance}>IDR 50.000</Text>
+
       <Text style={styles.id}>Savings 13256049460</Text>
     </View>
   );
