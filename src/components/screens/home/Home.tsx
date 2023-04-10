@@ -21,9 +21,11 @@ export const Home: React.FC = () => {
             barStyle={'dark-content'}
           />
           <View style={styles.container}>
-            <Heading />
-            <BalanceCard />
-            <MenuList />
+            <View style={styles.headingContainer}>
+              <Heading />
+              <BalanceCard />
+              <MenuList />
+            </View>
             <HistoryList />
             <ActivityList />
           </View>
@@ -35,7 +37,15 @@ export const Home: React.FC = () => {
 
 const styles = StyleSheet.create({
   root: {
-    backgroundColor: colors.white,
+    backgroundColor: colors.gray.gray50,
+  },
+  headingContainer: {
+    backgroundColor: colors.gray.gray50,
+    marginLeft: -16,
+    marginRight: -16,
+    paddingLeft: 16,
+    paddingRight: 16,
+    paddingBottom: 16,
   },
   container: {
     flex: 1,
