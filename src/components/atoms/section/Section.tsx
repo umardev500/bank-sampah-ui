@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   labelText: {
-    fontSize: 18,
+    fontSize: 16,
     color: colors.gray.gray600,
-    fontWeight: '500',
+    fontFamily: 'Roboto-Medium',
   },
   arrow: {},
 });
