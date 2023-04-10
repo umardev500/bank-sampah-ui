@@ -6,6 +6,7 @@ import {
   StyleProp,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
   ViewStyle,
 } from 'react-native';
@@ -23,10 +24,12 @@ export const MenuListing: React.FC<Props> = ({
 }) => {
   return (
     <View style={[containerStyle]}>
-      <View style={styles.iconContainer}>
-        <Image style={styles.icon} source={source} />
-      </View>
-      <Text style={styles.text}>{text}</Text>
+      <TouchableOpacity onPress={() => {}}>
+        <View style={styles.iconContainer}>
+          <Image style={styles.icon} source={source} />
+        </View>
+        <Text style={styles.text}>{text}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
