@@ -5,14 +5,19 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 export const ActivityListing: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Image style={styles.thumb} source={require('assets/thumbs/thumb.png')} />
-      <View style={styles.detail}>
-        <View>
-          <Text style={styles.title}>Kardus, dan lainnya</Text>
-        </View>
-        <View style={styles.deliveryInfo}>
-          <Text style={styles.deliveryText}>Paket akan diambil pada</Text>
-          <Text style={styles.deliveryTime}>Hari ini, 14:20</Text>
+      <View style={styles.inner}>
+        <Image
+          style={styles.thumb}
+          source={require('assets/thumbs/thumb.png')}
+        />
+        <View style={styles.detail}>
+          <View>
+            <Text style={styles.title}>Kardus, dan lainnya</Text>
+          </View>
+          <View style={styles.deliveryInfo}>
+            <Text style={styles.deliveryText}>Paket akan diambil pada</Text>
+            <Text style={styles.deliveryTime}>Hari ini, 14:20</Text>
+          </View>
         </View>
       </View>
       <Image source={require('assets/icons/dots-vertical-dark.png')} />
@@ -28,7 +33,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.gray.gray100,
     flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  inner: {
     gap: 16,
+    flexDirection: 'row',
   },
   thumb: {
     borderRadius: 8,
