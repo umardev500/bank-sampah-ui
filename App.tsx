@@ -1,18 +1,15 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {RootNavigation} from 'components/organisms';
 import React from 'react';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {StyleSheet} from 'react-native';
-import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 function App(): JSX.Element {
   return (
     <GestureHandlerRootView style={styles.container}>
-      <BottomSheetModalProvider>
-        <NavigationContainer>
-          <RootNavigation />
-        </NavigationContainer>
-      </BottomSheetModalProvider>
+      <NavigationContainer>
+        <RootNavigation />
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 }
