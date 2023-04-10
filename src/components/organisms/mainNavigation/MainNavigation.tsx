@@ -1,7 +1,7 @@
 import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabIcon} from 'components/atoms/tabIcon';
-import {Home, Inbox, Notification, Setting} from 'components/screens';
+import {Home, Inbox, Notification, Post, Setting} from 'components/screens';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
@@ -59,7 +59,7 @@ export const MainNavigation: React.FC = () => {
             tabBarLabel: () => null,
           }}
           name="Post"
-          component={Notification}
+          component={Post}
         />
         <Tab.Screen
           options={{
