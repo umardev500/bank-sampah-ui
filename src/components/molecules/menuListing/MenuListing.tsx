@@ -47,6 +47,6 @@ const styles = StyleSheet.create({
   },
   text: {
     color: colors.gray.gray600,
-    fontWeight: '500',
+    fontFamily: 'Roboto-Medium',
   },
 });
