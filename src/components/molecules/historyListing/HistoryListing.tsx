@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     borderBottomWidth: 0.5,
-    paddingBottom: 10,
+    paddingBottom: 16,
     borderBottomColor: colors.gray.gray200,
   },
   info: {

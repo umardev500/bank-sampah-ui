@@ -23,14 +23,12 @@ export const MenuListing: React.FC<Props> = ({
   containerStyle,
 }) => {
   return (
-    <View style={[containerStyle]}>
-      <TouchableOpacity onPress={() => {}}>
-        <View style={styles.iconContainer}>
-          <Image style={styles.icon} source={source} />
-        </View>
-        <Text style={styles.text}>{text}</Text>
-      </TouchableOpacity>
-    </View>
+    <TouchableOpacity style={containerStyle} onPress={() => {}}>
+      <View style={styles.iconContainer}>
+        <Image style={styles.icon} source={source} />
+      </View>
+      <Text style={styles.text}>{text}</Text>
+    </TouchableOpacity>
   );
 };
 
