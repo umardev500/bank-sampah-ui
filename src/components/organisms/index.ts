@@ -7,3 +7,4 @@ export * from './activiyList';
 export * from './rootNavigation';
 export * from './topUpBottomSheet';
 export * from './header';
+export * from './paymentList';
