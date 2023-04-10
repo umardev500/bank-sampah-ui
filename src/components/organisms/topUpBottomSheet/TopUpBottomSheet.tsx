@@ -28,9 +28,16 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
           <Text style={styles.label}>Pilih Layanan</Text>
 
           <View style={styles.list}>
-            <TopUpListing onPress={handleBalanceClick} title="Saldo" />
-            <TopUpListing title="PLN" />
-            <TopUpListing title="Pulsa" />
+            <TopUpListing
+              icon={require('assets/icons/balance.png')}
+              onPress={handleBalanceClick}
+              title="Saldo"
+            />
+            <TopUpListing icon={require('assets/icons/pln.png')} title="PLN" />
+            <TopUpListing
+              icon={require('assets/icons/credit.png')}
+              title="Pulsa"
+            />
           </View>
         </View>
       </BottomSheetModal>
