@@ -20,7 +20,10 @@ export const ActivityListing: React.FC = () => {
           </View>
         </View>
       </View>
-      <Image source={require('assets/icons/dots-vertical-dark.png')} />
+      <Image
+        style={styles.dots}
+        source={require('assets/icons/dots-vertical-dark.png')}
+      />
     </View>
   );
 };
@@ -61,5 +64,10 @@ const styles = StyleSheet.create({
   deliveryTime: {
     fontSize: 12,
     color: colors.gray.gray400,
+  },
+  dots: {
+    width: 8,
+    marginRight: -4,
+    marginLeft: 10,
   },
 });
