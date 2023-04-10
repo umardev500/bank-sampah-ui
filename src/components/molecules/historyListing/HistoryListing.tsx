@@ -14,22 +14,33 @@ interface Props {
     name: string;
     price: string;
     photo: ImageSourcePropType;
+    status: 'received' | 'sent';
   };
 }
 
 export const HistoryListing: React.FC<Props> = ({item}) => {
+  const receiveIcon = require('assets/icons/receive-arrow.png');
+  const sendIcon = require('assets/icons/send-arrow.png');
+  const statusIcon = item.status === 'received' ? receiveIcon : sendIcon;
+  const receiveText = 'Payment received';
+  const sendText = 'Payment complete';
+  const statusText = item.status === 'received' ? receiveText : sendText;
+
   return (
     <TouchableOpacity style={styles.container}>
       {/* Left side */}
       <View style={styles.left}>
-        <Image style={styles.image} source={item.photo} />
+        <View>
+          <Image style={styles.image} source={item.photo} />
+          <Image style={styles.status} source={statusIcon} />
+        </View>
       </View>
 
       {/* Right */}
       <View style={styles.right}>
         <View style={styles.info}>
           <Text style={styles.name}>{item.name}</Text>
-          <Text style={styles.time}>08:25 Payment complete</Text>
+          <Text style={styles.time}>08:25 {statusText}</Text>
         </View>
         <Text style={styles.price}>+ Rp{item.price}</Text>
       </View>
@@ -45,6 +56,13 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
+  },
+  status: {
+    position: 'absolute',
+    bottom: -4,
+    right: -4,
+    width: 22,
+    height: 22,
   },
   left: {
     flexDirection: 'row',
