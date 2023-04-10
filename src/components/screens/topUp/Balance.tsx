@@ -1,4 +1,4 @@
-import {Header} from 'components/organisms';
+import {Header, PaymentList} from 'components/organisms';
 import {colors} from 'constants/colors';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
@@ -8,6 +8,7 @@ export const Balance: React.FC = () => {
     <>
       <View style={styles.root}>
         <Header />
+        <PaymentList />
       </View>
     </>
   );
