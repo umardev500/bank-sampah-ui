@@ -12,26 +12,24 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const Home: React.FC = () => {
   return (
-    <View style={styles.root}>
-      <SafeAreaView>
-        <ScrollView>
-          <StatusBar
-            translucent
-            backgroundColor={'transparent'}
-            barStyle={'dark-content'}
-          />
-          <View style={styles.container}>
-            <View style={styles.headingContainer}>
-              <Heading />
-              <BalanceCard />
-              <MenuList />
-            </View>
-            <HistoryList />
-            <ActivityList />
+    <SafeAreaView style={styles.root}>
+      <ScrollView>
+        <StatusBar
+          translucent
+          backgroundColor={'transparent'}
+          barStyle={'dark-content'}
+        />
+        <View style={styles.container}>
+          <View style={styles.headingContainer}>
+            <Heading />
+            <BalanceCard />
+            <MenuList />
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    </View>
+          <HistoryList />
+          <ActivityList />
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
