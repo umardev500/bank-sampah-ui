@@ -50,7 +50,7 @@ export const HistoryList: React.FC = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 46,
+    marginTop: 30,
   },
   list: {
     gap: 16,
