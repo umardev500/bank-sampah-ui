@@ -1,16 +1,19 @@
 import {Section} from 'components/atoms';
 import {ActivityListing} from 'components/molecules';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 
 export const ActivityList: React.FC = () => {
   return (
     <View style={styles.container}>
       <Section label="Sampah Saya" />
 
-      <View style={styles.list}>
-        <ActivityListing />
-      </View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <View style={styles.list}>
+          <ActivityListing />
+          <ActivityListing />
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -21,5 +24,7 @@ const styles = StyleSheet.create({
   },
   list: {
     gap: 16,
+    flexDirection: 'row',
+    paddingBottom: 4,
   },
 });
