@@ -1,6 +1,13 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  ImageSourcePropType,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 interface Props {
   item: {
@@ -12,7 +19,7 @@ interface Props {
 
 export const HistoryListing: React.FC<Props> = ({item}) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       {/* Left side */}
       <View style={styles.left}>
         <Image style={styles.image} source={item.photo} />
@@ -26,7 +33,7 @@ export const HistoryListing: React.FC<Props> = ({item}) => {
         </View>
         <Text style={styles.price}>+ Rp{item.price}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
