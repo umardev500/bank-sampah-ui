@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'Roboto-Medium',
     color: colors.gray.gray600,
   },
   deliveryInfo: {
