@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     padding: 24,
     marginTop: 16,
-    gap: 8,
+    gap: 10,
   },
   label: {
     flexDirection: 'row',
