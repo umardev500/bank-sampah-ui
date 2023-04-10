@@ -33,9 +33,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.gray.gray100,
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   inner: {
+    flex: 1,
     gap: 16,
     flexDirection: 'row',
   },
