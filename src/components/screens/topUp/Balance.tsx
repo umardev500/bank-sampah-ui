@@ -7,7 +7,7 @@ export const Balance: React.FC = () => {
   return (
     <>
       <View style={styles.root}>
-        <Header />
+        <Header title="Metode Pembayaran" />
         <PaymentList />
       </View>
     </>

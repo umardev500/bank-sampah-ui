@@ -3,11 +3,15 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
-export const Header: React.FC = () => {
+interface Props {
+  title?: string;
+}
+
+export const Header: React.FC<Props> = ({title}) => {
   return (
     <SafeAreaView style={styles.root}>
       <View style={styles.container}>
-        <Text style={styles.title}>Metode Pembayaran</Text>
+        <Text style={styles.title}>{title}</Text>
       </View>
     </SafeAreaView>
   );
