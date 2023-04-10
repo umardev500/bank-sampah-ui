@@ -42,7 +42,15 @@ export const HistoryListing: React.FC<Props> = ({item}) => {
           <Text style={styles.name}>{item.name}</Text>
           <Text style={styles.time}>08:25 {statusText}</Text>
         </View>
-        <Text style={styles.price}>+ Rp{item.price}</Text>
+        <Text
+          style={[
+            styles.price,
+            item.status === 'received'
+              ? {color: colors.green.green600}
+              : {color: colors.gray.gray500},
+          ]}>
+          {item.status === 'received' ? '+' : '-'} Rp{item.price}
+        </Text>
       </View>
     </TouchableOpacity>
   );
@@ -95,7 +103,6 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 16,
-    color: colors.green.green600,
     fontWeight: '500',
   },
 });
