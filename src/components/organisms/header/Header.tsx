@@ -1,7 +1,8 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
   title?: string;
@@ -10,10 +11,7 @@ interface Props {
 export const Header: React.FC<Props> = ({title}) => {
   return (
     <SafeAreaView style={styles.root}>
-      <Image
-        style={styles.arrow}
-        source={require('assets/icons/arrow-back.png')}
-      />
+      <Icon name="arrow-back" size={24} />
       <View style={styles.container}>
         <Text style={styles.title}>{title}</Text>
       </View>

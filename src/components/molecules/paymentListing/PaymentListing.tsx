@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
   iconW: number;
@@ -31,7 +32,11 @@ export const PaymentListing: React.FC<Props> = ({
       </View>
       <View style={styles.right}>
         <Text style={styles.title}>{title}</Text>
-        <Image source={require('assets/icons/arrow-right.png')} />
+        <Icon
+          name="keyboard-arrow-right"
+          size={24}
+          color={colors.gray.gray500}
+        />
       </View>
     </TouchableOpacity>
   );

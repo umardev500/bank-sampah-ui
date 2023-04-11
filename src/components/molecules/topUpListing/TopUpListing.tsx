@@ -1,5 +1,6 @@
 import {colors} from 'constants/colors';
 import React from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
   Image,
   StyleSheet,
@@ -21,7 +22,11 @@ export const TopUpListing: React.FC<Props> = ({title, icon, onPress}) => {
       <Image style={styles.icon} source={icon} />
       <View style={styles.itemRight}>
         <Text style={styles.title}>{title}</Text>
-        <Image source={require('assets/icons/arrow-right.png')} />
+        <Icon
+          name="keyboard-arrow-right"
+          size={24}
+          color={colors.gray.gray500}
+        />
       </View>
     </TouchableOpacity>
   );
