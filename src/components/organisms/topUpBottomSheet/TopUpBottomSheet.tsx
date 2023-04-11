@@ -27,6 +27,7 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
         containerStyle={styles.container}
         index={1}
         ref={ref}
+        handleIndicatorStyle={styles.handleIndicator}
         snapPoints={snapPoints}>
         <View style={styles.inner}>
           <Text style={styles.label}>Pilih Layanan</Text>
@@ -63,5 +64,8 @@ const styles = StyleSheet.create({
   },
   list: {
     paddingTop: 16,
+  },
+  handleIndicator: {
+    backgroundColor: colors.gray.gray400,
   },
 });
