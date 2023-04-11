@@ -103,6 +103,6 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'Roboto-Medium',
   },
 });
