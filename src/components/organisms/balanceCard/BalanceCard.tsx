@@ -1,6 +1,7 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const BalanceCard: React.FC = () => {
   return (
@@ -9,9 +10,11 @@ export const BalanceCard: React.FC = () => {
         <View style={styles.label}>
           <Text style={styles.labelText}>Balance</Text>
           <TouchableOpacity onPress={() => console.log('clicked')}>
-            <Image
+            <Icon
               style={styles.dots}
-              source={require('assets/icons/dots-vertical.png')}
+              name="dots-vertical"
+              size={20}
+              color={colors.white}
             />
           </TouchableOpacity>
         </View>
