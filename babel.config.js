@@ -16,6 +16,7 @@ module.exports = {
           components: './src/components',
           assets: './assets',
           constants: './src/constants',
+          hooks: './src/hooks',
         },
         extensions: [
           '.ios.js',

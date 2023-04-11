@@ -2,12 +2,15 @@ import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabIcon} from 'components/atoms/tabIcon';
 import {Home, Inbox, Notification, Post, Setting} from 'components/screens';
+import {useBackHandler} from 'hooks/useBackHandler';
 import React from 'react';
 import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 export const MainNavigation: React.FC = () => {
+  useBackHandler();
+
   return (
     <BottomSheetModalProvider>
       <Tab.Navigator
