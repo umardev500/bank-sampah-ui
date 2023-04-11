@@ -1,9 +1,10 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import React from 'react';
-import {MainNavigation} from '../mainNavigation';
 import {Balance} from 'components/screens';
+import React from 'react';
+import {RootStack} from 'types/rootStack';
+import {MainNavigation} from '../mainNavigation';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<RootStack>();
 
 export const RootNavigation: React.FC = () => {
   return (

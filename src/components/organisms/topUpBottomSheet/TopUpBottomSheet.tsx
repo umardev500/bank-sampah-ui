@@ -1,18 +1,22 @@
 import {BottomSheetModal} from '@gorhom/bottom-sheet';
 import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 import {TopUpListing} from 'components/molecules';
 import {colors} from 'constants/colors';
 import React, {useCallback, useMemo} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {RootStack} from 'types/rootStack';
 
 interface Props {
   name?: string;
 }
 
+type NavigationProps = StackNavigationProp<RootStack>;
+
 export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
   (props, ref) => {
     const snapPoints = useMemo(() => ['25%', '50%'], []);
-    const navigation = useNavigation();
+    const navigation = useNavigation<NavigationProps>();
 
     const handleBalanceClick = useCallback(() => {
       navigation.navigate('balanceTopUp');

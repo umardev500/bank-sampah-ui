@@ -6,7 +6,8 @@
       "components/*": ["./src/components/*"],
       "assets/*": ["./assets/*"],
       "constants/*": ["./src/constants/*"],
-      "hooks/*": ["./src/hooks/*"]
+      "hooks/*": ["./src/hooks/*"],
+      "types/*": ["./src/types/*"]
     }
   }
 }
