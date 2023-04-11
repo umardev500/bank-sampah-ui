@@ -1,6 +1,7 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const ActivityListing: React.FC = () => {
   return (
@@ -20,10 +21,15 @@ export const ActivityListing: React.FC = () => {
           </View>
         </View>
       </View>
-      <Image
-        style={styles.dots}
-        source={require('assets/icons/dots-vertical-dark.png')}
-      />
+
+      <TouchableOpacity>
+        <Icon
+          style={styles.dots}
+          name="dots-vertical"
+          size={18}
+          color={colors.gray.gray400}
+        />
+      </TouchableOpacity>
     </View>
   );
 };
@@ -66,8 +72,8 @@ const styles = StyleSheet.create({
     color: colors.gray.gray400,
   },
   dots: {
-    width: 8,
+    marginLeft: 6,
     marginRight: -4,
-    marginLeft: 10,
+    marginTop: 2,
   },
 });
