@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Listing } from 'components/molecules';
-import React from 'react';
+import React, { useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { RootStack } from 'types/rootStack';
 
@@ -12,6 +12,10 @@ export const PaymentList: React.FC = () => {
   const toValueScreen = (vendor: string) => {
     navigation.navigate('topUpValue', { vendor: vendor });
   };
+
+  const toBankList = useCallback(() => {
+    navigation.navigate('bankList');
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -28,6 +32,7 @@ export const PaymentList: React.FC = () => {
       <Listing
         icon={require('assets/icons/salary.png')}
         title="Bank Transfer"
+        onPress={toBankList}
       />
     </View>
   );
