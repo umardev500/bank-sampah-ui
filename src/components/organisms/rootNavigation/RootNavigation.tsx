@@ -5,6 +5,7 @@ import {
   TopUpInfo,
   TopUpValue,
   Transfer,
+  TransferInfo,
   TransferValue,
 } from 'components/screens';
 import React from 'react';
@@ -24,7 +25,7 @@ export const RootNavigation: React.FC = () => {
         barStyle={'dark-content'}
       />
       <Stack.Navigator
-        initialRouteName="main"
+        initialRouteName="transferInfo"
         screenOptions={{
           headerShown: true,
           title: 'Pembayaran',
@@ -80,6 +81,13 @@ export const RootNavigation: React.FC = () => {
           }}
           name="transferValue"
           component={TransferValue}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Informasi Transfer',
+          }}
+          name="transferInfo"
+          component={TransferInfo}
         />
       </Stack.Navigator>
     </>

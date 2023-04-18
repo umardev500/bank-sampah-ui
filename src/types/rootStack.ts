@@ -10,4 +10,5 @@ export type RootStack = {
   topUpInfo: undefined;
   transfer: undefined;
   transferValue: undefined;
+  transferInfo: undefined;
 };

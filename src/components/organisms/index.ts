@@ -13,3 +13,5 @@ export * from './valueView';
 export * from './keyboard';
 export * from './paymentCard';
 export * from './transferForm';
+export * from './transferReceiver';
+export * from './transferDetail';
