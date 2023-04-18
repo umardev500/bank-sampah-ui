@@ -1,11 +1,12 @@
-import {BottomSheetModal} from '@gorhom/bottom-sheet';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {TopUpListing} from 'components/molecules';
-import {colors} from 'constants/colors';
-import React, {useCallback, useMemo} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {RootStack} from 'types/rootStack';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { TopUpListing } from 'components/molecules';
+import { colors } from 'constants/colors';
+import { useBackdrop } from 'hooks/useBackdrop';
+import React, { useCallback, useMemo } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { RootStack } from 'types/rootStack';
 
 interface Props {
   name?: string;
@@ -22,11 +23,13 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
       navigation.navigate('paymentMethod');
     }, []);
 
+    const renderBackdrop = useBackdrop();
+
     return (
       <BottomSheetModal
-        containerStyle={styles.container}
         index={1}
         ref={ref}
+        backdropComponent={renderBackdrop}
         handleIndicatorStyle={styles.handleIndicator}
         snapPoints={snapPoints}>
         <View style={styles.inner}>
@@ -51,9 +54,6 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
 );
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: 'rgba(0,0,0,.6)',
-  },
   inner: {
     padding: 24,
   },

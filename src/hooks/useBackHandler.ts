@@ -1,5 +1,5 @@
-import {useEffect} from 'react';
-import {Alert, BackHandler} from 'react-native';
+import { useEffect } from 'react';
+import { Alert, BackHandler } from 'react-native';
 
 export const useBackHandler = () => {
   useEffect(() => {

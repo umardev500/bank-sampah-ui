@@ -1,12 +1,12 @@
-import {RouteProp, useRoute} from '@react-navigation/native';
-import {Button} from 'components/atoms';
-import {Header, Keyboard, ValueView} from 'components/organisms';
-import {colors} from 'constants/colors';
-import {toPrice} from 'helpers/toPrice';
-import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text, Vibration, View} from 'react-native';
-import {KeyPad} from 'types/keyboard';
-import {RootStack} from 'types/rootStack';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import { Button } from 'components/atoms';
+import { Header, Keyboard, ValueView } from 'components/organisms';
+import { colors } from 'constants/colors';
+import { toPrice } from 'helpers/toPrice';
+import React, { useCallback, useState } from 'react';
+import { StyleSheet, Text, Vibration, View } from 'react-native';
+import { KeyPad } from 'types/keyboard';
+import { RootStack } from 'types/rootStack';
 
 type ScreenRouteProps = RouteProp<RootStack, 'topUpValue'>;
 

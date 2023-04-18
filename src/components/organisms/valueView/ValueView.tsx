@@ -1,7 +1,7 @@
-import {colors} from 'constants/colors';
-import {toPrice} from 'helpers/toPrice';
+import { colors } from 'constants/colors';
+import { toPrice } from 'helpers/toPrice';
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
   price: string | number;
 }
 
-export const ValueView: React.FC<Props> = ({price, onClear}) => {
+export const ValueView: React.FC<Props> = ({ price, onClear }) => {
   return (
     <ScrollView>
       <View style={styles.inner}>

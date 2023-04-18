@@ -1,7 +1,7 @@
-import {Section} from 'components/atoms';
-import {HistoryListing} from 'components/molecules';
+import { Section } from 'components/atoms';
+import { HistoryListing } from 'components/molecules';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export const HistoryList: React.FC = () => {
   return (

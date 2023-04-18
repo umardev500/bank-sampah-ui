@@ -1,15 +1,15 @@
-import {useNavigation} from '@react-navigation/native';
-import {colors} from 'constants/colors';
-import React, {useCallback} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { useNavigation } from '@react-navigation/native';
+import { colors } from 'constants/colors';
+import React, { useCallback } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
   title?: string;
 }
 
-export const Header: React.FC<Props> = ({title}) => {
+export const Header: React.FC<Props> = ({ title }) => {
   const navigation = useNavigation();
 
   const handleBack = useCallback(() => {

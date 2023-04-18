@@ -1,9 +1,9 @@
-import {createStackNavigator} from '@react-navigation/stack';
-import {Bank, PaymentMethod, TopUpValue} from 'components/screens';
+import { createStackNavigator } from '@react-navigation/stack';
+import { Bank, PaymentMethod, TopUpValue } from 'components/screens';
 import React from 'react';
-import {StatusBar} from 'react-native';
-import {RootStack} from 'types/rootStack';
-import {MainNavigation} from '../mainNavigation';
+import { StatusBar } from 'react-native';
+import { RootStack } from 'types/rootStack';
+import { MainNavigation } from '../mainNavigation';
 
 const Stack = createStackNavigator<RootStack>();
 

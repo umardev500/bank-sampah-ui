@@ -1,16 +1,16 @@
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {Listing} from 'components/molecules';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Listing } from 'components/molecules';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {RootStack} from 'types/rootStack';
+import { StyleSheet, View } from 'react-native';
+import { RootStack } from 'types/rootStack';
 
 type NavigationProps = StackNavigationProp<RootStack>;
 
 export const PaymentList: React.FC = () => {
   const navigation = useNavigation<NavigationProps>();
   const toValueScreen = (vendor: string) => {
-    navigation.navigate('topUpValue', {vendor: vendor});
+    navigation.navigate('topUpValue', { vendor: vendor });
   };
 
   return (

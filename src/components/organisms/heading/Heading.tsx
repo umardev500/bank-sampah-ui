@@ -1,6 +1,6 @@
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
 export const Heading: React.FC = () => {
   return (

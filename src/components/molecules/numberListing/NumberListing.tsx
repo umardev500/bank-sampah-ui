@@ -1,7 +1,7 @@
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import {KeyPad} from 'types/keyboard';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { KeyPad } from 'types/keyboard';
 
 interface Props {
   value: KeyPad | React.ReactElement;

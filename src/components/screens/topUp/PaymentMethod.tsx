@@ -1,7 +1,7 @@
-import {Header, PaymentList} from 'components/organisms';
-import {colors} from 'constants/colors';
+import { Header, PaymentList } from 'components/organisms';
+import { colors } from 'constants/colors';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export const PaymentMethod: React.FC = () => {
   return (

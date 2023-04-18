@@ -1,10 +1,10 @@
-import {BottomSheetModalProvider} from '@gorhom/bottom-sheet';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {TabIcon} from 'components/atoms/tabIcon';
-import {Home, Inbox, Notification, Post, Setting} from 'components/screens';
-import {useBackHandler} from 'hooks/useBackHandler';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TabIcon } from 'components/atoms/tabIcon';
+import { Home, Inbox, Notification, Post, Setting } from 'components/screens';
+import { useBackHandler } from 'hooks/useBackHandler';
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +19,7 @@ export const MainNavigation: React.FC = () => {
         }}>
         <Tab.Screen
           options={{
-            tabBarIcon: ({focused}) => {
+            tabBarIcon: ({ focused }) => {
               return (
                 <TabIcon
                   focused={focused}
@@ -36,7 +36,7 @@ export const MainNavigation: React.FC = () => {
         />
         <Tab.Screen
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <TabIcon
                 focused={focused}
                 sourceActive={require('assets/icons/bell-active.png')}
@@ -51,7 +51,7 @@ export const MainNavigation: React.FC = () => {
         />
         <Tab.Screen
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <TabIcon
                 focused={focused}
                 sourceActive={require('assets/icons/plus-active.png')}
@@ -66,7 +66,7 @@ export const MainNavigation: React.FC = () => {
         />
         <Tab.Screen
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <TabIcon
                 focused={focused}
                 sourceActive={require('assets/icons/inbox-active.png')}
@@ -81,7 +81,7 @@ export const MainNavigation: React.FC = () => {
         />
         <Tab.Screen
           options={{
-            tabBarIcon: ({focused}) => (
+            tabBarIcon: ({ focused }) => (
               <TabIcon
                 focused={focused}
                 sourceActive={require('assets/icons/setting-active.png')}

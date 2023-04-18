@@ -5,10 +5,10 @@ import {
   HistoryList,
   MenuList,
 } from 'components/organisms';
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import { ScrollView, StyleSheet, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export const Home: React.FC = () => {
   return (

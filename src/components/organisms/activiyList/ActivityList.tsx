@@ -1,7 +1,7 @@
-import {Section} from 'components/atoms';
-import {ActivityListing} from 'components/molecules';
+import { Section } from 'components/atoms';
+import { ActivityListing } from 'components/molecules';
 import React from 'react';
-import {ScrollView, StyleSheet, View} from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 
 export const ActivityList: React.FC = () => {
   return (

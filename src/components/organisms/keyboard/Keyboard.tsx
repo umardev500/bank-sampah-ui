@@ -1,15 +1,15 @@
-import {NumberListing} from 'components/molecules';
+import { NumberListing } from 'components/molecules';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {KeyPad} from 'types/keyboard';
+import { KeyPad } from 'types/keyboard';
 
 interface Props {
   onPress: (value: KeyPad) => void;
   onDelete: () => void;
 }
 
-export const Keyboard = React.memo(({onPress, onDelete}: Props) => {
+export const Keyboard = React.memo(({ onPress, onDelete }: Props) => {
   const deleteIcon = <Icon name="close-circle" size={24} />;
 
   return (

@@ -1,6 +1,6 @@
-import {Listing} from 'components/molecules';
+import { Listing } from 'components/molecules';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export const BankList: React.FC = () => {
   return (

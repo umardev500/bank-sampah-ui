@@ -1,4 +1,4 @@
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {
@@ -16,7 +16,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export const TopUpListing: React.FC<Props> = ({title, icon, onPress}) => {
+export const TopUpListing: React.FC<Props> = ({ title, icon, onPress }) => {
   return (
     <TouchableOpacity style={styles.item} onPress={onPress}>
       <Image style={styles.icon} source={icon} />

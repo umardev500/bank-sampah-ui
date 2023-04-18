@@ -1,8 +1,8 @@
-import {NavigationContainer} from '@react-navigation/native';
-import {RootNavigation} from 'components/organisms';
+import { NavigationContainer } from '@react-navigation/native';
+import { RootNavigation } from 'components/organisms';
 import React from 'react';
-import {StyleSheet} from 'react-native';
-import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import { StyleSheet } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 function App(): JSX.Element {
   return (

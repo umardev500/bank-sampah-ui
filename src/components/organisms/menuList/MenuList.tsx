@@ -1,8 +1,8 @@
-import {BottomSheetModal} from '@gorhom/bottom-sheet';
-import {MenuListing} from 'components/molecules';
-import React, {useCallback, useRef} from 'react';
-import {StyleSheet, View} from 'react-native';
-import {TopUpBottomSheet} from '../topUpBottomSheet';
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
+import { MenuListing } from 'components/molecules';
+import React, { useCallback, useRef } from 'react';
+import { StyleSheet, View } from 'react-native';
+import { TopUpBottomSheet } from '../topUpBottomSheet';
 
 export const MenuList: React.FC = () => {
   const topUpRef = useRef<BottomSheetModal>(null);

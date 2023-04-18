@@ -1,4 +1,4 @@
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
 import {
   Image,
@@ -18,7 +18,7 @@ interface Props {
   };
 }
 
-export const HistoryListing: React.FC<Props> = ({item}) => {
+export const HistoryListing: React.FC<Props> = ({ item }) => {
   const receiveIcon = require('assets/icons/receive-arrow.png');
   const sendIcon = require('assets/icons/send-arrow.png');
   const statusIcon = item.status === 'received' ? receiveIcon : sendIcon;
@@ -46,8 +46,8 @@ export const HistoryListing: React.FC<Props> = ({item}) => {
           style={[
             styles.price,
             item.status === 'received'
-              ? {color: colors.green.green600}
-              : {color: colors.gray.gray500},
+              ? { color: colors.green.green600 }
+              : { color: colors.gray.gray500 },
           ]}>
           {item.status === 'received' ? '+' : '-'} Rp{item.price}
         </Text>

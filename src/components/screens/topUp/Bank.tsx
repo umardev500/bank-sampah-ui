@@ -1,7 +1,7 @@
-import {BankList, Header} from 'components/organisms';
-import {colors} from 'constants/colors';
+import { BankList, Header } from 'components/organisms';
+import { colors } from 'constants/colors';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 export const Bank: React.FC = () => {
   return (

@@ -1,4 +1,4 @@
-import {colors} from 'constants/colors';
+import { colors } from 'constants/colors';
 import React from 'react';
 import {
   Image,
@@ -16,7 +16,7 @@ interface Props {
   onPress?: () => void;
 }
 
-export const Listing: React.FC<Props> = ({icon, title, onPress}) => {
+export const Listing: React.FC<Props> = ({ icon, title, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.iconContainer}>
