@@ -43,10 +43,13 @@ export const TopUpValue: React.FC = () => {
   };
 
   const clearHandler = useCallback(() => {
+    Vibration.vibrate(100);
     setPrice('0');
   }, []);
 
   const deleteHandler = useCallback(() => {
+    Vibration.vibrate(100);
+
     setPrice(prev => {
       let result = '0';
       const len = prev.length;
