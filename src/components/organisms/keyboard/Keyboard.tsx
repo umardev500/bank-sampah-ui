@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 20,
-    height: 80,
+    height: 70,
   },
 });
