@@ -4,11 +4,15 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 interface Props {
   opacity?: number;
+  onPress?: () => void;
 }
 
-export const Button: React.FC<Props> = ({ opacity = 0.5 }) => {
+export const Button: React.FC<Props> = ({ opacity = 0.5, onPress }) => {
   return (
-    <TouchableOpacity activeOpacity={opacity} style={styles.root}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={opacity}
+      style={styles.root}>
       <Text style={styles.text}>Submit</Text>
     </TouchableOpacity>
   );

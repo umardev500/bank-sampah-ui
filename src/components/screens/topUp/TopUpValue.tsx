@@ -1,4 +1,5 @@
-import { RouteProp, useRoute } from '@react-navigation/native';
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'components/atoms';
 import { Header, Keyboard, ValueView } from 'components/organisms';
 import { colors } from 'constants/colors';
@@ -9,9 +10,11 @@ import { KeyPad } from 'types/keyboard';
 import { RootStack } from 'types/rootStack';
 
 type ScreenRouteProps = RouteProp<RootStack, 'topUpValue'>;
+type NavigationProps = StackNavigationProp<RootStack>;
 
 export const TopUpValue: React.FC = () => {
   const route = useRoute<ScreenRouteProps>();
+  const navigation = useNavigation<NavigationProps>();
   const params = route.params;
   const [price, setPrice] = useState('0');
 
@@ -61,6 +64,10 @@ export const TopUpValue: React.FC = () => {
     });
   }, []);
 
+  const handleSubmit = () => {
+    navigation.navigate('topUpInfo');
+  };
+
   return (
     <View style={styles.root}>
       <Header title={params.vendor} />
@@ -73,7 +80,7 @@ export const TopUpValue: React.FC = () => {
               <Text style={styles.totalLabel}>Total Pembayaran</Text>
               <Text style={styles.totalPrice}>{toPrice(price, 'Rp')}</Text>
             </View>
-            <Button opacity={0.7} />
+            <Button onPress={handleSubmit} opacity={0.7} />
           </View>
         </View>
       </View>
