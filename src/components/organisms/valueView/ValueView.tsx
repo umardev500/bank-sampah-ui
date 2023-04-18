@@ -61,10 +61,12 @@ const styles = StyleSheet.create({
   currency: {
     fontSize: 28,
     fontFamily: 'Roboto-Bold',
+    color: colors.gray.gray600,
   },
   price: {
     fontSize: 40,
     fontFamily: 'Roboto-Bold',
+    color: colors.gray.gray600,
   },
   additionalFee: {
     color: colors.gray.gray500,
