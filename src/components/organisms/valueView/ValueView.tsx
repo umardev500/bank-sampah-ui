@@ -5,10 +5,11 @@ import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 interface Props {
+  onClear: () => void;
   price: string | number;
 }
 
-export const ValueView: React.FC<Props> = ({price}) => {
+export const ValueView: React.FC<Props> = ({price, onClear}) => {
   return (
     <ScrollView>
       <View style={styles.inner}>
@@ -20,7 +21,7 @@ export const ValueView: React.FC<Props> = ({price}) => {
           </View>
 
           <Icon
-            onPress={() => console.log('click')}
+            onPress={onClear}
             style={styles.closeIcon}
             name="close-circle"
             size={20}

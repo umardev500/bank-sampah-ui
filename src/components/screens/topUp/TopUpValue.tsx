@@ -2,7 +2,7 @@ import {Button} from 'components/atoms';
 import {Header, Keyboard, ValueView} from 'components/organisms';
 import {colors} from 'constants/colors';
 import {toPrice} from 'helpers/toPrice';
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {KeyPad} from 'types/keyboard';
 
@@ -31,11 +31,15 @@ export const TopUpValue: React.FC = () => {
     }
   };
 
+  const clearHandler = useCallback(() => {
+    setPrice('0');
+  }, []);
+
   return (
     <View style={styles.root}>
       <Header title="Alfamart" />
       <View style={styles.inner}>
-        <ValueView price={price} />
+        <ValueView onClear={clearHandler} price={price} />
         <View style={styles.keyboard}>
           <Keyboard onPress={typeHandler} />
           <View style={styles.bottom}>
