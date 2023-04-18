@@ -35,10 +35,6 @@ export const Keyboard: React.FC = () => {
 const styles = StyleSheet.create({
   root: {
     padding: 24,
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
     elevation: 8,
     backgroundColor: 'white',
   },
