@@ -1,2 +1,2 @@
-export * from './Balance';
+export * from './PaymentMethod';
 export * from './Bank';

@@ -1,5 +1,5 @@
 export type RootStack = {
   main: undefined;
-  balanceTopUp: undefined;
+  paymentMethod: undefined;
   bankList: undefined;
 };
