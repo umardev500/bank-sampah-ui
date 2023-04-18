@@ -2,6 +2,7 @@ import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TabIcon } from 'components/atoms/tabIcon';
 import { Home, Inbox, Notification, Post, Setting } from 'components/screens';
+import { colors } from 'constants/colors';
 import { useBackHandler } from 'hooks/useBackHandler';
 import React from 'react';
 import { StyleSheet } from 'react-native';
@@ -15,10 +16,13 @@ export const MainNavigation: React.FC = () => {
     <BottomSheetModalProvider>
       <Tab.Navigator
         screenOptions={{
-          headerShown: false,
+          headerTitleStyle: {
+            color: colors.gray.gray600,
+          },
         }}>
         <Tab.Screen
           options={{
+            headerShown: false,
             tabBarIcon: ({ focused }) => {
               return (
                 <TabIcon
