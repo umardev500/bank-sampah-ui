@@ -1,4 +1,4 @@
-import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'components/atoms';
 import { Keyboard, ValueView } from 'components/organisms';
@@ -9,13 +9,10 @@ import { StyleSheet, Text, Vibration, View } from 'react-native';
 import { KeyPad } from 'types/keyboard';
 import { RootStack } from 'types/rootStack';
 
-type ScreenRouteProps = RouteProp<RootStack, 'topUpValue'>;
 type NavigationProps = StackNavigationProp<RootStack>;
 
 export const TopUpValue: React.FC = () => {
-  const route = useRoute<ScreenRouteProps>();
   const navigation = useNavigation<NavigationProps>();
-  const params = route.params;
   const [price, setPrice] = useState('0');
 
   const typeHandler = (value: KeyPad) => {
