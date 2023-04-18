@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     marginTop: 24,
   },
   bottomLeft: {
-    flex: 1,
+    flexGrow: 1,
   },
   totalLabel: {
     color: colors.gray.gray400,
