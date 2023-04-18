@@ -11,24 +11,16 @@ import {
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
-  iconW: number;
-  iconH: number;
   title: string;
   icon: ImageSourcePropType;
   onPress?: () => void;
 }
 
-export const PaymentListing: React.FC<Props> = ({
-  icon,
-  iconW,
-  iconH,
-  title,
-  onPress,
-}) => {
+export const PaymentListing: React.FC<Props> = ({icon, title, onPress}) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.iconContainer}>
-        <Image style={{width: iconW, height: iconH}} source={icon} />
+        <Image style={[styles.icon]} source={icon} />
       </View>
       <View style={styles.right}>
         <Text style={styles.title}>{title}</Text>
@@ -50,8 +42,14 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     width: 50,
+    height: 50,
     alignItems: 'center',
     justifyContent: 'center',
+    overflow: 'hidden',
+  },
+  icon: {
+    resizeMode: 'contain',
+    maxWidth: '100%',
   },
   right: {
     flex: 1,
