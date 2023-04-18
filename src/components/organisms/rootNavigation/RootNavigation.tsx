@@ -1,5 +1,11 @@
 import { createStackNavigator } from '@react-navigation/stack';
-import { Bank, PaymentMethod, TopUpInfo, TopUpValue } from 'components/screens';
+import {
+  Bank,
+  PaymentMethod,
+  TopUpInfo,
+  TopUpValue,
+  Transfer,
+} from 'components/screens';
 import React from 'react';
 import { StatusBar } from 'react-native';
 import { RootStack } from 'types/rootStack';
@@ -59,6 +65,13 @@ export const RootNavigation: React.FC = () => {
           }}
           name="topUpInfo"
           component={TopUpInfo}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Transfer',
+          }}
+          name="transfer"
+          component={Transfer}
         />
       </Stack.Navigator>
     </>

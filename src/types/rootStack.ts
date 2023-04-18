@@ -8,4 +8,5 @@ export type RootStack = {
   bankList: undefined;
   topUpValue: TopUpValueParams;
   topUpInfo: undefined;
+  transfer: undefined;
 };

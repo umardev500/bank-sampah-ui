@@ -1,19 +1,27 @@
 import { colors } from 'constants/colors';
 import React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 interface Props {
+  text: string;
   opacity?: number;
+  containerStyle?: StyleProp<ViewStyle>;
   onPress?: () => void;
 }
 
-export const Button: React.FC<Props> = ({ opacity = 0.5, onPress }) => {
+export const Button: React.FC<Props> = ({
+  text,
+  opacity = 0.5,
+  containerStyle,
+  onPress,
+}) => {
   return (
     <TouchableOpacity
       onPress={onPress}
       activeOpacity={opacity}
-      style={styles.root}>
-      <Text style={styles.text}>Submit</Text>
+      style={[styles.root, containerStyle]}>
+      <Text style={styles.text}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -23,7 +31,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingTop: 13,
     paddingBottom: 13,
-    flexGrow: 1,
     paddingLeft: 16,
     paddingRight: 16,
     borderRadius: 100,

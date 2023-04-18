@@ -3,12 +3,21 @@ import { MenuListing } from 'components/molecules';
 import React, { useCallback, useRef } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { TopUpBottomSheet } from '../topUpBottomSheet';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStack } from 'types/rootStack';
+
+type NavigationProps = StackNavigationProp<RootStack>;
 
 export const MenuList: React.FC = () => {
   const topUpRef = useRef<BottomSheetModal>(null);
+  const navigation = useNavigation<NavigationProps>();
 
   const handlePressTopUp = useCallback(() => {
     topUpRef.current?.present();
+  }, []);
+  const handlePressTransfer = useCallback(() => {
+    navigation.navigate('transfer');
   }, []);
 
   return (
@@ -24,6 +33,7 @@ export const MenuList: React.FC = () => {
           text="Transfer"
           containerStyle={styles.item}
           source={require('assets/icons/transfer.png')}
+          onPress={handlePressTransfer}
         />
         <MenuListing
           text="Receive"

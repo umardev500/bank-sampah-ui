@@ -5,3 +5,4 @@ export * from './inbox';
 export * from './topUp';
 export * from './setting';
 export * from './post';
+export * from './transfer';
