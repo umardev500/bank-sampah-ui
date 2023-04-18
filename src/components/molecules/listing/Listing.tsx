@@ -27,7 +27,7 @@ export const Listing: React.FC<Props> = ({ icon, title, onPress }) => {
         <Icon
           name="keyboard-arrow-right"
           size={24}
-          color={colors.gray.gray500}
+          color={colors.gray.gray400}
         />
       </View>
     </TouchableOpacity>
