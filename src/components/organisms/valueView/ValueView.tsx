@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
   valueView: {
     marginTop: 24,
     flexDirection: 'row',
+    gap: 20,
     alignItems: 'center',
     justifyContent: 'space-between',
   },
@@ -56,8 +57,9 @@ const styles = StyleSheet.create({
   },
   priceContainer: {
     flexDirection: 'row',
-    overflow: 'hidden',
     flex: 1,
+    flexWrap: 'wrap',
+    paddingLeft: 0,
   },
   currency: {
     fontSize: 28,
