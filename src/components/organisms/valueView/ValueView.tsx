@@ -1,30 +1,33 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const ValueView: React.FC = () => {
   return (
-    <View style={styles.root}>
-      <Text style={styles.label}>Nominal Saldo</Text>
-      <View style={styles.valueView}>
-        <View style={styles.priceContainer}>
-          <Text style={styles.currency}>Rp</Text>
-          <Text style={styles.price}>50.000</Text>
-        </View>
+    <ScrollView>
+      <View style={styles.inner}>
+        <Text style={styles.label}>Nominal Saldo</Text>
+        <View style={styles.valueView}>
+          <View style={styles.priceContainer}>
+            <Text style={styles.currency}>Rp</Text>
+            <Text style={styles.price}>50.000</Text>
+          </View>
 
-        <Icon style={styles.closeIcon} name="close-circle" size={20} />
+          <Icon style={styles.closeIcon} name="close-circle" size={20} />
+        </View>
+        <Text style={styles.additionalFee}>+ Rp5.000 biaya admin</Text>
       </View>
-      <Text style={styles.additionalFee}>+ Rp5.000 biaya admin</Text>
-    </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  root: {
+  inner: {
     paddingLeft: 24,
     paddingRight: 24,
-    marginTop: 40,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
   label: {
     fontSize: 16,
