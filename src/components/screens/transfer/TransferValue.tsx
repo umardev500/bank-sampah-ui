@@ -1,7 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'components/atoms';
-import { Keyboard, ValueView } from 'components/organisms';
+import {
+  Keyboard,
+  TransactionDetailSheet,
+  ValueView,
+} from 'components/organisms';
 import { colors } from 'constants/colors';
 import { toPrice } from 'helpers/toPrice';
 import { useClearInput } from 'hooks/useClearInput';
@@ -47,6 +51,8 @@ export const TransferValue: React.FC = () => {
           </View>
         </View>
       </View>
+
+      <TransactionDetailSheet />
     </View>
   );
 };

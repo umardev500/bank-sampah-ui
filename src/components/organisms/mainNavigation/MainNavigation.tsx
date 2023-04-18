@@ -1,4 +1,3 @@
-import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { TabIcon } from 'components/atoms/tabIcon';
 import { Home, Inbox, Notification, Post, Setting } from 'components/screens';
@@ -13,93 +12,91 @@ export const MainNavigation: React.FC = () => {
   useBackHandler();
 
   return (
-    <BottomSheetModalProvider>
-      <Tab.Navigator
-        screenOptions={{
-          headerTitleStyle: {
-            color: colors.gray.gray600,
+    <Tab.Navigator
+      screenOptions={{
+        headerTitleStyle: {
+          color: colors.gray.gray600,
+        },
+      }}>
+      <Tab.Screen
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ focused }) => {
+            return (
+              <TabIcon
+                focused={focused}
+                sourceActive={require('assets/icons/home-active.png')}
+                source={require('assets/icons/home-inactive.png')}
+                style={styles.icon}
+              />
+            );
           },
-        }}>
-        <Tab.Screen
-          options={{
-            headerShown: false,
-            tabBarIcon: ({ focused }) => {
-              return (
-                <TabIcon
-                  focused={focused}
-                  sourceActive={require('assets/icons/home-active.png')}
-                  source={require('assets/icons/home-inactive.png')}
-                  style={styles.icon}
-                />
-              );
-            },
-            tabBarLabel: () => null,
-          }}
-          name="Home"
-          component={Home}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <TabIcon
-                focused={focused}
-                sourceActive={require('assets/icons/bell-active.png')}
-                source={require('assets/icons/bell-inactive.png')}
-                style={styles.icon}
-              />
-            ),
-            tabBarLabel: () => null,
-          }}
-          name="Notification"
-          component={Notification}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <TabIcon
-                focused={focused}
-                sourceActive={require('assets/icons/plus-active.png')}
-                source={require('assets/icons/plus-inactive.png')}
-                style={styles.icon}
-              />
-            ),
-            tabBarLabel: () => null,
-          }}
-          name="Post"
-          component={Post}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <TabIcon
-                focused={focused}
-                sourceActive={require('assets/icons/inbox-active.png')}
-                source={require('assets/icons/inbox-inactive.png')}
-                style={styles.icon}
-              />
-            ),
-            tabBarLabel: () => null,
-          }}
-          name="Inbox"
-          component={Inbox}
-        />
-        <Tab.Screen
-          options={{
-            tabBarIcon: ({ focused }) => (
-              <TabIcon
-                focused={focused}
-                sourceActive={require('assets/icons/setting-active.png')}
-                source={require('assets/icons/setting-inactive.png')}
-                style={styles.icon}
-              />
-            ),
-            tabBarLabel: () => null,
-          }}
-          name="Setting"
-          component={Setting}
-        />
-      </Tab.Navigator>
-    </BottomSheetModalProvider>
+          tabBarLabel: () => null,
+        }}
+        name="Home"
+        component={Home}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              sourceActive={require('assets/icons/bell-active.png')}
+              source={require('assets/icons/bell-inactive.png')}
+              style={styles.icon}
+            />
+          ),
+          tabBarLabel: () => null,
+        }}
+        name="Notification"
+        component={Notification}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              sourceActive={require('assets/icons/plus-active.png')}
+              source={require('assets/icons/plus-inactive.png')}
+              style={styles.icon}
+            />
+          ),
+          tabBarLabel: () => null,
+        }}
+        name="Post"
+        component={Post}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              sourceActive={require('assets/icons/inbox-active.png')}
+              source={require('assets/icons/inbox-inactive.png')}
+              style={styles.icon}
+            />
+          ),
+          tabBarLabel: () => null,
+        }}
+        name="Inbox"
+        component={Inbox}
+      />
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              focused={focused}
+              sourceActive={require('assets/icons/setting-active.png')}
+              source={require('assets/icons/setting-inactive.png')}
+              style={styles.icon}
+            />
+          ),
+          tabBarLabel: () => null,
+        }}
+        name="Setting"
+        component={Setting}
+      />
+    </Tab.Navigator>
   );
 };
 
