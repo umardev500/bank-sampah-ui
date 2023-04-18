@@ -3,3 +3,4 @@ export * from './historyListing';
 export * from './activityListing';
 export * from './topUpListing';
 export * from './listing';
+export * from './numberListing';
