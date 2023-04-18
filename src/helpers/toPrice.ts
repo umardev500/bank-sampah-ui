@@ -1,9 +1,10 @@
-export const toPrice = (price = 0, prefix?: string) => {
+export const toPrice = (price: string | number, prefix?: string) => {
   if (prefix === undefined) {
     prefix = '';
   }
+  const isNumber = typeof price === 'number';
 
-  const str = price.toString();
+  const str = isNumber ? price.toString() : price;
   const left = str.length % 3;
   const leftNum = str.substring(0, left);
   const tho = str.substring(left).match(/\d{3}/gi);
