@@ -24,7 +24,7 @@ export const TransferValue: React.FC = () => {
   const deleteHandler = useDeleteKeyboardChar(setPrice);
 
   const handleSubmit = () => {
-    navigation.navigate('topUpInfo');
+    navigation.navigate('transferInfo');
   };
 
   return (

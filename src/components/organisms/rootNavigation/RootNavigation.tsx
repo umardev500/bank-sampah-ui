@@ -25,7 +25,7 @@ export const RootNavigation: React.FC = () => {
         barStyle={'dark-content'}
       />
       <Stack.Navigator
-        initialRouteName="transferInfo"
+        initialRouteName="main"
         screenOptions={{
           headerShown: true,
           title: 'Pembayaran',
