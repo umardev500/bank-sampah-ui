@@ -3,16 +3,27 @@ import { colors } from 'constants/colors';
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 
-export const SheetButtonGroup: React.FC = () => {
+interface Props {
+  onCancle?: () => void;
+  onConfirm?: () => void;
+}
+
+export const SheetButtonGroup: React.FC<Props> = ({ onCancle, onConfirm }) => {
   return (
     <View style={styles.buttonContainer}>
       <Button
+        onPress={onCancle}
         opacity={0.6}
         color={colors.primary}
         containerStyle={[styles.button, styles.secondary]}
         text="Batalakan"
       />
-      <Button opacity={0.6} containerStyle={styles.button} text="Konfirmasi" />
+      <Button
+        onPress={onConfirm}
+        opacity={0.6}
+        containerStyle={styles.button}
+        text="Konfirmasi"
+      />
     </View>
   );
 };

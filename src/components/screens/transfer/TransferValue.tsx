@@ -12,7 +12,7 @@ import { toPrice } from 'helpers/toPrice';
 import { useClearInput } from 'hooks/useClearInput';
 import { useDeleteKeyboardChar } from 'hooks/useDeleteKeyboardChar';
 import { usePriceType } from 'hooks/usePriceType';
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RootStack } from 'types/rootStack';
 
@@ -32,6 +32,13 @@ export const TransferValue: React.FC = () => {
   const handleSubmit = () => {
     sheetRef.current?.present();
   };
+
+  const handleCancel = useCallback(() => {
+    sheetRef.current?.close();
+  }, []);
+  const handleConfirm = useCallback(() => {
+    navigation.navigate('transferInfo');
+  }, []);
 
   return (
     <View style={styles.root}>
@@ -54,7 +61,11 @@ export const TransferValue: React.FC = () => {
         </View>
       </View>
 
-      <TransactionDetailSheet ref={sheetRef} />
+      <TransactionDetailSheet
+        onCancel={handleCancel}
+        onConfirm={handleConfirm}
+        ref={sheetRef}
+      />
     </View>
   );
 };

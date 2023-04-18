@@ -3,14 +3,19 @@ import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export const SheetBottom: React.FC = () => {
+interface Props {
+  onCancel?: () => void;
+  onConfirm?: () => void;
+}
+
+export const SheetBottom: React.FC<Props> = ({ onCancel, onConfirm }) => {
   return (
     <View style={styles.bottom}>
       <View style={styles.total}>
         <Text style={styles.totalText}>Total Transaksi</Text>
         <Text style={styles.totalPrice}>Rp50.000</Text>
       </View>
-      <SheetButtonGroup />
+      <SheetButtonGroup onCancle={onCancel} onConfirm={onConfirm} />
     </View>
   );
 };

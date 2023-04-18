@@ -6,15 +6,20 @@ import { BottomSheet } from '../bottomSheet';
 import { SheetBottom } from '../sheetBottom';
 import { TransferDetailList } from '../transferDetailList';
 
-export const TransactionDetailSheet = React.forwardRef<BottomSheetModal, any>(
-  (_, ref) => {
+interface Props {
+  onCancel?: () => void;
+  onConfirm?: () => void;
+}
+
+export const TransactionDetailSheet = React.forwardRef<BottomSheetModal, Props>(
+  ({ onCancel, onConfirm }, ref) => {
     return (
       <BottomSheet ref={ref}>
         <>
           <Text style={styles.label}>Detail Transaksi</Text>
           <View style={styles.content}>
             <TransferDetailList />
-            <SheetBottom />
+            <SheetBottom onCancel={onCancel} onConfirm={onConfirm} />
           </View>
         </>
       </BottomSheet>
