@@ -1,19 +1,19 @@
-import {PaymentListing} from 'components/molecules';
+import {Listing} from 'components/molecules';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 export const BankList: React.FC = () => {
   return (
     <View style={styles.container}>
-      <PaymentListing
+      <Listing
         icon={require('assets/logos/permata-2.png')}
         title="BNI Virtual Account"
       />
-      <PaymentListing
+      <Listing
         icon={require('assets/logos/bni.png')}
         title="BNI Virtual Account"
       />
-      <PaymentListing
+      <Listing
         icon={require('assets/logos/briva.png')}
         title="BRI Virtual Account"
       />
