@@ -7,18 +7,13 @@ import {
 } from 'components/organisms';
 import {colors} from 'constants/colors';
 import React from 'react';
-import {ScrollView, StatusBar, StyleSheet, View} from 'react-native';
+import {ScrollView, StyleSheet, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 export const Home: React.FC = () => {
   return (
     <SafeAreaView style={styles.root}>
       <ScrollView>
-        <StatusBar
-          translucent
-          backgroundColor={'transparent'}
-          barStyle={'dark-content'}
-        />
         <View style={styles.container}>
           <View style={styles.headingContainer}>
             <Heading />
