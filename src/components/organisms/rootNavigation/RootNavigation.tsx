@@ -1,5 +1,5 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import {Bank, PaymentMethod} from 'components/screens';
+import {Bank, PaymentMethod, TopUpValue} from 'components/screens';
 import React from 'react';
 import {StatusBar} from 'react-native';
 import {RootStack} from 'types/rootStack';
@@ -16,13 +16,14 @@ export const RootNavigation: React.FC = () => {
         barStyle={'dark-content'}
       />
       <Stack.Navigator
-        initialRouteName="bankList"
+        initialRouteName="topUpValue"
         screenOptions={{
           headerShown: false,
         }}>
         <Stack.Screen name="main" component={MainNavigation} />
         <Stack.Screen name="paymentMethod" component={PaymentMethod} />
         <Stack.Screen name="bankList" component={Bank} />
+        <Stack.Screen name="topUpValue" component={TopUpValue} />
       </Stack.Navigator>
     </>
   );
