@@ -16,7 +16,7 @@ export const RootNavigation: React.FC = () => {
         barStyle={'dark-content'}
       />
       <Stack.Navigator
-        initialRouteName="topUpValue"
+        initialRouteName="main"
         screenOptions={{
           headerShown: false,
         }}>

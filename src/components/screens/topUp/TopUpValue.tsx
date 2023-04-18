@@ -1,3 +1,4 @@
+import {RouteProp, useRoute} from '@react-navigation/native';
 import {Button} from 'components/atoms';
 import {Header, Keyboard, ValueView} from 'components/organisms';
 import {colors} from 'constants/colors';
@@ -5,8 +6,13 @@ import {toPrice} from 'helpers/toPrice';
 import React, {useCallback, useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {KeyPad} from 'types/keyboard';
+import {RootStack} from 'types/rootStack';
+
+type ScreenRouteProps = RouteProp<RootStack, 'topUpValue'>;
 
 export const TopUpValue: React.FC = () => {
+  const route = useRoute<ScreenRouteProps>();
+  const params = route.params;
   const [price, setPrice] = useState('0');
 
   const typeHandler = (value: KeyPad) => {
@@ -49,7 +55,7 @@ export const TopUpValue: React.FC = () => {
 
   return (
     <View style={styles.root}>
-      <Header title="Alfamart" />
+      <Header title={params.vendor} />
       <View style={styles.inner}>
         <ValueView onClear={clearHandler} price={price} />
         <View style={styles.keyboard}>

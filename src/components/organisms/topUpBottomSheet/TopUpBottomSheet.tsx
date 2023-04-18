@@ -19,7 +19,7 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
     const navigation = useNavigation<NavigationProps>();
 
     const handleBalanceClick = useCallback(() => {
-      navigation.navigate('balanceTopUp');
+      navigation.navigate('paymentMethod');
     }, []);
 
     return (
