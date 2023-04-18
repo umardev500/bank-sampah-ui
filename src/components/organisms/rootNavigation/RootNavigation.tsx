@@ -19,19 +19,43 @@ export const RootNavigation: React.FC = () => {
       <Stack.Navigator
         initialRouteName="main"
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
+          title: 'Pembayaran',
+          headerTitleStyle: {
+            color: colors.gray.gray600,
+          },
         }}>
-        <Stack.Screen name="main" component={MainNavigation} />
-        <Stack.Screen name="paymentMethod" component={PaymentMethod} />
-        <Stack.Screen name="bankList" component={Bank} />
-        <Stack.Screen name="topUpValue" component={TopUpValue} />
         <Stack.Screen
           options={{
-            headerShown: true,
+            headerShown: false,
+          }}
+          name="main"
+          component={MainNavigation}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Metode Pembayaran',
+          }}
+          name="paymentMethod"
+          component={PaymentMethod}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Pilih Bank Tujuan',
+          }}
+          name="bankList"
+          component={Bank}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Jumlah Pembayaran',
+          }}
+          name="topUpValue"
+          component={TopUpValue}
+        />
+        <Stack.Screen
+          options={{
             title: 'Pembayaran',
-            headerTitleStyle: {
-              color: colors.gray.gray600,
-            },
           }}
           name="topUpInfo"
           component={TopUpInfo}

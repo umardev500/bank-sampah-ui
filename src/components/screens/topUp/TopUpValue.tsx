@@ -1,7 +1,7 @@
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'components/atoms';
-import { Header, Keyboard, ValueView } from 'components/organisms';
+import { Keyboard, ValueView } from 'components/organisms';
 import { colors } from 'constants/colors';
 import { toPrice } from 'helpers/toPrice';
 import React, { useCallback, useState } from 'react';
@@ -70,7 +70,6 @@ export const TopUpValue: React.FC = () => {
 
   return (
     <View style={styles.root}>
-      <Header title={params.vendor} />
       <View style={styles.inner}>
         <ValueView onClear={clearHandler} price={price} />
         <View style={styles.keyboard}>
