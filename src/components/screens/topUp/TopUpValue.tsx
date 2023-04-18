@@ -7,7 +7,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {KeyPad} from 'types/keyboard';
 
 export const TopUpValue: React.FC = () => {
-  const [price, setPrice] = useState<KeyPad>('0');
+  const [price, setPrice] = useState('0');
 
   const typeHandler = (value: KeyPad) => {
     let isOk = true;
@@ -35,13 +35,25 @@ export const TopUpValue: React.FC = () => {
     setPrice('0');
   }, []);
 
+  const deleteHandler = useCallback(() => {
+    setPrice(prev => {
+      let result = '0';
+      const len = prev.length;
+      if (len > 0 && len !== 1) {
+        result = prev.substring(0, len - 1);
+      }
+
+      return result;
+    });
+  }, []);
+
   return (
     <View style={styles.root}>
       <Header title="Alfamart" />
       <View style={styles.inner}>
         <ValueView onClear={clearHandler} price={price} />
         <View style={styles.keyboard}>
-          <Keyboard onPress={typeHandler} />
+          <Keyboard onDelete={deleteHandler} onPress={typeHandler} />
           <View style={styles.bottom}>
             <View style={styles.bottomLeft}>
               <Text style={styles.totalLabel}>Total Pembayaran</Text>

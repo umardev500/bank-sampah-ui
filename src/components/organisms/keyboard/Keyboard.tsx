@@ -6,9 +6,10 @@ import {KeyPad} from 'types/keyboard';
 
 interface Props {
   onPress: (value: KeyPad) => void;
+  onDelete: () => void;
 }
 
-export const Keyboard = React.memo(({onPress}: Props) => {
+export const Keyboard = React.memo(({onPress, onDelete}: Props) => {
   const deleteIcon = <Icon name="close-circle" size={24} />;
 
   return (
@@ -31,7 +32,7 @@ export const Keyboard = React.memo(({onPress}: Props) => {
       <View style={styles.row}>
         <NumberListing onPress={onPress} value="0" />
         <NumberListing onPress={onPress} value="000" />
-        <NumberListing isDelete onPress={onPress} value={deleteIcon} />
+        <NumberListing isDelete onPress={onDelete} value={deleteIcon} />
       </View>
     </View>
   );
