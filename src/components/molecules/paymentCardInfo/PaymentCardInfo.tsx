@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     gap: 5,
   },
   expTime: {
-    color: colors.green.green600,
+    color: colors.red.red700,
   },
   price: {
     fontFamily: 'Roboto-Bold',
     fontSize: 28,
     textAlign: 'center',
-    color: colors.gray.gray500,
+    color: colors.gray.gray600,
     marginTop: 10,
   },
 });

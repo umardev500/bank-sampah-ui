@@ -13,9 +13,16 @@ const green = {
   green600: '#16A34A',
 };
 
+const red = {
+  red500: '#EF4444',
+  red600: '#DC2626',
+  red700: '#B91C1C',
+};
+
 export const colors = {
   primary: '#6F69AC',
   white: '#fff',
   gray: gray,
   green: green,
+  red: red,
 };
