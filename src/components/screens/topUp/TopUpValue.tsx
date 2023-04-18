@@ -79,7 +79,12 @@ export const TopUpValue: React.FC = () => {
               <Text style={styles.totalLabel}>Total Pembayaran</Text>
               <Text style={styles.totalPrice}>{toPrice(price, 'Rp')}</Text>
             </View>
-            <Button onPress={handleSubmit} opacity={0.7} />
+            <Button
+              containerStyle={styles.button}
+              text="Submit"
+              onPress={handleSubmit}
+              opacity={0.7}
+            />
           </View>
         </View>
       </View>
@@ -122,5 +127,8 @@ const styles = StyleSheet.create({
   totalPrice: {
     fontSize: 20,
     fontFamily: 'Roboto-Bold',
+  },
+  button: {
+    flexGrow: 1,
   },
 });
