@@ -1,3 +1,4 @@
+import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { Button } from 'components/atoms';
@@ -11,13 +12,14 @@ import { toPrice } from 'helpers/toPrice';
 import { useClearInput } from 'hooks/useClearInput';
 import { useDeleteKeyboardChar } from 'hooks/useDeleteKeyboardChar';
 import { usePriceType } from 'hooks/usePriceType';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { RootStack } from 'types/rootStack';
 
 type NavigationProps = StackNavigationProp<RootStack>;
 
 export const TransferValue: React.FC = () => {
+  const sheetRef = useRef<BottomSheetModal>(null);
   const navigation = useNavigation<NavigationProps>();
   const [price, setPrice] = useState('0');
 
@@ -28,7 +30,7 @@ export const TransferValue: React.FC = () => {
   const deleteHandler = useDeleteKeyboardChar(setPrice);
 
   const handleSubmit = () => {
-    navigation.navigate('transferInfo');
+    sheetRef.current?.present();
   };
 
   return (
@@ -52,7 +54,7 @@ export const TransferValue: React.FC = () => {
         </View>
       </View>
 
-      <TransactionDetailSheet />
+      <TransactionDetailSheet ref={sheetRef} />
     </View>
   );
 };
