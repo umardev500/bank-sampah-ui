@@ -8,15 +8,17 @@ export const TopUpValue: React.FC = () => {
   return (
     <View style={styles.root}>
       <Header title="Alfamart" />
-      <ValueView />
-      <View style={styles.keyboard}>
-        <Keyboard />
-        <View style={styles.bottom}>
-          <View style={styles.bottomLeft}>
-            <Text style={styles.totalLabel}>Total Pembayaran</Text>
-            <Text style={styles.totalPrice}>Rp55.000</Text>
+      <View style={styles.inner}>
+        <ValueView />
+        <View style={styles.keyboard}>
+          <Keyboard />
+          <View style={styles.bottom}>
+            <View style={styles.bottomLeft}>
+              <Text style={styles.totalLabel}>Total Pembayaran</Text>
+              <Text style={styles.totalPrice}>Rp55.000</Text>
+            </View>
+            <Button opacity={0.7} />
           </View>
-          <Button opacity={0.7} />
         </View>
       </View>
     </View>
@@ -28,11 +30,11 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
   },
+  inner: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
   keyboard: {
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
     backgroundColor: colors.white,
     elevation: 8,
     paddingLeft: 24,
