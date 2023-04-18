@@ -13,14 +13,18 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 interface Props {
   title: string;
   icon: ImageSourcePropType;
+  size?: number;
   onPress?: () => void;
 }
 
-export const Listing: React.FC<Props> = ({ icon, title, onPress }) => {
+export const Listing: React.FC<Props> = ({ icon, title, size, onPress }) => {
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <View style={styles.iconContainer}>
-        <Image style={[styles.icon]} source={icon} />
+        <Image
+          style={[styles.icon, size !== undefined ? { width: size } : {}]}
+          source={icon}
+        />
       </View>
       <View style={styles.right}>
         <Text style={styles.title}>{title}</Text>

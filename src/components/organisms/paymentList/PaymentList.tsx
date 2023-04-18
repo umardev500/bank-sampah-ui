@@ -23,15 +23,18 @@ export const PaymentList: React.FC = () => {
         icon={require('assets/icons/alfamart-logo.png')}
         title="Alfamart"
         onPress={() => toValueScreen('Alfamart')}
+        size={44}
       />
       <Listing
         icon={require('assets/icons/indomaret-logo.png')}
         onPress={() => toValueScreen('Indomaret')}
         title="Indomaret"
+        size={44}
       />
       <Listing
         icon={require('assets/icons/salary.png')}
         title="Bank Transfer"
+        size={34}
         onPress={toBankList}
       />
     </View>
