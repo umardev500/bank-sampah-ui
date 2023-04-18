@@ -4,9 +4,11 @@ import { Button } from 'components/atoms';
 import { Keyboard, ValueView } from 'components/organisms';
 import { colors } from 'constants/colors';
 import { toPrice } from 'helpers/toPrice';
-import React, { useCallback, useState } from 'react';
-import { StyleSheet, Text, Vibration, View } from 'react-native';
-import { KeyPad } from 'types/keyboard';
+import { useClearInput } from 'hooks/useClearInput';
+import { useDeleteKeyboardChar } from 'hooks/useDeleteKeyboardChar';
+import { usePriceType } from 'hooks/usePriceType';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 import { RootStack } from 'types/rootStack';
 
 type NavigationProps = StackNavigationProp<RootStack>;
@@ -15,51 +17,11 @@ export const TopUpValue: React.FC = () => {
   const navigation = useNavigation<NavigationProps>();
   const [price, setPrice] = useState('0');
 
-  const typeHandler = (value: KeyPad) => {
-    Vibration.vibrate(100);
+  const typeHandler = usePriceType(price, setPrice);
 
-    let isOk = true;
-    if (price.charAt(0) === '0') {
-      // check for price is zero value
-      if (value === '0' || value === '000') {
-        // check if inputted value is 0 or 000
-        isOk = false;
-      }
-    }
+  const clearHandler = useClearInput(setPrice);
 
-    if (value !== 'delete' && isOk) {
-      // check for inputted value not delete and isOK to true
-      setPrice(prev => {
-        let result: KeyPad = '0';
-        if (prev !== '0') {
-          result = (prev + value) as KeyPad;
-        } else {
-          result = value;
-        }
-
-        return result;
-      });
-    }
-  };
-
-  const clearHandler = useCallback(() => {
-    Vibration.vibrate(100);
-    setPrice('0');
-  }, []);
-
-  const deleteHandler = useCallback(() => {
-    Vibration.vibrate(100);
-
-    setPrice(prev => {
-      let result = '0';
-      const len = prev.length;
-      if (len > 0 && len !== 1) {
-        result = prev.substring(0, len - 1);
-      }
-
-      return result;
-    });
-  }, []);
+  const deleteHandler = useDeleteKeyboardChar(setPrice);
 
   const handleSubmit = () => {
     navigation.navigate('topUpInfo');
