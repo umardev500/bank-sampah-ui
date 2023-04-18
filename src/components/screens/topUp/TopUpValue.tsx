@@ -16,7 +16,7 @@ export const TopUpValue: React.FC = () => {
   const [price, setPrice] = useState('0');
 
   const typeHandler = (value: KeyPad) => {
-    Vibration.vibrate();
+    Vibration.vibrate(100);
 
     let isOk = true;
     if (price.charAt(0) === '0') {
