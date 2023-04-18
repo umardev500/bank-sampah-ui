@@ -37,6 +37,7 @@ export const TransferValue: React.FC = () => {
     sheetRef.current?.close();
   }, []);
   const handleConfirm = useCallback(() => {
+    sheetRef.current?.forceClose();
     navigation.navigate('transferInfo');
   }, []);
 
