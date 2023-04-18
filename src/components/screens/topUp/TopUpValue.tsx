@@ -4,7 +4,7 @@ import {Header, Keyboard, ValueView} from 'components/organisms';
 import {colors} from 'constants/colors';
 import {toPrice} from 'helpers/toPrice';
 import React, {useCallback, useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, Vibration, View} from 'react-native';
 import {KeyPad} from 'types/keyboard';
 import {RootStack} from 'types/rootStack';
 
@@ -16,14 +16,19 @@ export const TopUpValue: React.FC = () => {
   const [price, setPrice] = useState('0');
 
   const typeHandler = (value: KeyPad) => {
+    Vibration.vibrate();
+
     let isOk = true;
     if (price.charAt(0) === '0') {
+      // check for price is zero value
       if (value === '0' || value === '000') {
+        // check if inputted value is 0 or 000
         isOk = false;
       }
     }
 
     if (value !== 'delete' && isOk) {
+      // check for inputted value not delete and isOK to true
       setPrice(prev => {
         let result: KeyPad = '0';
         if (prev !== '0') {
