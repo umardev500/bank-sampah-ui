@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: 24,
+    gap: 10,
   },
   bottomLeft: {
     flexGrow: 1,
