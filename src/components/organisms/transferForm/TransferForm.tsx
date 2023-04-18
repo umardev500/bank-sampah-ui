@@ -1,15 +1,22 @@
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { Button, Input } from 'components/atoms';
 import React, { useCallback } from 'react';
 import { StyleSheet, Vibration, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { RootStack } from 'types/rootStack';
+
+type NavigationProps = StackNavigationProp<RootStack>;
 
 export const TransferForm: React.FC = () => {
+  const navigation = useNavigation<NavigationProps>();
+
   const handlePressQR = useCallback(() => {
     Vibration.vibrate(100);
   }, []);
 
   const handleNext = useCallback(() => {
-    Vibration.vibrate(100);
+    navigation.navigate('transferValue');
   }, []);
 
   return (

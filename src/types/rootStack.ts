@@ -9,4 +9,5 @@ export type RootStack = {
   topUpValue: TopUpValueParams;
   topUpInfo: undefined;
   transfer: undefined;
+  transferValue: undefined;
 };

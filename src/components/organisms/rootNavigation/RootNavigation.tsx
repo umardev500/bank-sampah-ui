@@ -5,6 +5,7 @@ import {
   TopUpInfo,
   TopUpValue,
   Transfer,
+  TransferValue,
 } from 'components/screens';
 import React from 'react';
 import { StatusBar } from 'react-native';
@@ -72,6 +73,13 @@ export const RootNavigation: React.FC = () => {
           }}
           name="transfer"
           component={Transfer}
+        />
+        <Stack.Screen
+          options={{
+            title: 'Transfer',
+          }}
+          name="transferValue"
+          component={TransferValue}
         />
       </Stack.Navigator>
     </>
