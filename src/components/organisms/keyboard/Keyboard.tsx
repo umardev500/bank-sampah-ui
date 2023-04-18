@@ -2,35 +2,40 @@ import {NumberListing} from 'components/molecules';
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {KeyPad} from 'types/keyboard';
 
-export const Keyboard: React.FC = () => {
+interface Props {
+  onPress: (value: KeyPad) => void;
+}
+
+export const Keyboard = React.memo(({onPress}: Props) => {
   const deleteIcon = <Icon name="close-circle" size={24} />;
 
   return (
     <View style={styles.root}>
       <View style={styles.row}>
-        <NumberListing value="1" />
-        <NumberListing value="2" />
-        <NumberListing value="3" />
+        <NumberListing onPress={onPress} value="1" />
+        <NumberListing onPress={onPress} value="2" />
+        <NumberListing onPress={onPress} value="3" />
       </View>
       <View style={styles.row}>
-        <NumberListing value="4" />
-        <NumberListing value="5" />
-        <NumberListing value="6" />
+        <NumberListing onPress={onPress} value="4" />
+        <NumberListing onPress={onPress} value="5" />
+        <NumberListing onPress={onPress} value="6" />
       </View>
       <View style={styles.row}>
-        <NumberListing value="7" />
-        <NumberListing value="8" />
-        <NumberListing value="9" />
+        <NumberListing onPress={onPress} value="7" />
+        <NumberListing onPress={onPress} value="8" />
+        <NumberListing onPress={onPress} value="9" />
       </View>
       <View style={styles.row}>
-        <NumberListing value="0" />
-        <NumberListing value="000" />
-        <NumberListing value={deleteIcon} />
+        <NumberListing onPress={onPress} value="0" />
+        <NumberListing onPress={onPress} value="000" />
+        <NumberListing isDelete onPress={onPress} value={deleteIcon} />
       </View>
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   root: {

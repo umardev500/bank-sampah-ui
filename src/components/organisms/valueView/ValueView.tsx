@@ -1,12 +1,14 @@
 import {colors} from 'constants/colors';
 import {toPrice} from 'helpers/toPrice';
-import React, {useState} from 'react';
+import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export const ValueView: React.FC = () => {
-  const [price] = useState(50000);
+interface Props {
+  price: string | number;
+}
 
+export const ValueView: React.FC<Props> = ({price}) => {
   return (
     <ScrollView>
       <View style={styles.inner}>

@@ -1,14 +1,25 @@
 import {colors} from 'constants/colors';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import {KeyPad} from 'types/keyboard';
 
 interface Props {
-  value: string | React.ReactElement;
+  value: KeyPad | React.ReactElement;
+  isDelete?: boolean;
+  onPress: (value: KeyPad) => void;
 }
 
-export const NumberListing: React.FC<Props> = ({value}) => {
+export const NumberListing: React.FC<Props> = ({
+  value,
+  isDelete = false,
+  onPress,
+}) => {
+  const handleClick = () => {
+    onPress(isDelete ? 'delete' : (value as KeyPad));
+  };
+
   return (
-    <TouchableOpacity style={styles.root}>
+    <TouchableOpacity style={styles.root} onPress={handleClick}>
       <Text style={styles.text}>{value}</Text>
     </TouchableOpacity>
   );
