@@ -7,4 +7,5 @@ export type RootStack = {
   paymentMethod: undefined;
   bankList: undefined;
   topUpValue: TopUpValueParams;
+  topUpInfo: undefined;
 };

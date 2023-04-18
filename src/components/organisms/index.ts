@@ -11,3 +11,4 @@ export * from './paymentList';
 export * from './bankList';
 export * from './valueView';
 export * from './keyboard';
+export * from './paymentCard';
