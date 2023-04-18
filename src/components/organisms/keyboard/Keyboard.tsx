@@ -35,7 +35,6 @@ export const Keyboard: React.FC = () => {
 const styles = StyleSheet.create({
   root: {
     padding: 24,
-    elevation: 8,
     backgroundColor: 'white',
   },
   row: {
