@@ -30,6 +30,11 @@ export const BankList: React.FC = () => {
         title="BRI Virtual Account"
         onPress={() => toValueScreen('BRI')}
       />
+      <Listing
+        icon={require('assets/logos/bca.png')}
+        title="BCA Virtual Account"
+        onPress={() => toValueScreen('BCA')}
+      />
     </View>
   );
 };
