@@ -1,6 +1,6 @@
 import {colors} from 'constants/colors';
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 
 interface Props {
   value: string | React.ReactElement;
@@ -8,9 +8,9 @@ interface Props {
 
 export const NumberListing: React.FC<Props> = ({value}) => {
   return (
-    <View style={styles.root}>
+    <TouchableOpacity style={styles.root}>
       <Text style={styles.text}>{value}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
