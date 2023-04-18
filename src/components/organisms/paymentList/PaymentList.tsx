@@ -8,20 +8,14 @@ export const PaymentList: React.FC = () => {
       <PaymentListing
         icon={require('assets/icons/alfamart-logo.png')}
         title="Alfamart"
-        iconW={50}
-        iconH={17}
       />
       <PaymentListing
         icon={require('assets/icons/indomaret-logo.png')}
         title="Indomaret"
-        iconW={50}
-        iconH={17}
       />
       <PaymentListing
         icon={require('assets/icons/salary.png')}
         title="Bank Transfer"
-        iconW={34}
-        iconH={34}
       />
     </View>
   );

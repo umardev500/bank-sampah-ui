@@ -6,22 +6,16 @@ export const BankList: React.FC = () => {
   return (
     <View style={styles.container}>
       <PaymentListing
-        icon={require('assets/icons/alfamart-logo.png')}
-        title="Alfamart"
-        iconW={50}
-        iconH={17}
+        icon={require('assets/logos/permata-2.png')}
+        title="BNI Virtual Account"
       />
       <PaymentListing
-        icon={require('assets/icons/indomaret-logo.png')}
-        title="Indomaret"
-        iconW={50}
-        iconH={17}
+        icon={require('assets/logos/bni.png')}
+        title="BNI Virtual Account"
       />
       <PaymentListing
-        icon={require('assets/icons/salary.png')}
-        title="Bank Transfer"
-        iconW={34}
-        iconH={34}
+        icon={require('assets/logos/briva.png')}
+        title="BRI Virtual Account"
       />
     </View>
   );
