@@ -29,6 +29,7 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
       <BottomSheetModal
         index={1}
         ref={ref}
+        backgroundStyle={styles.background}
         backdropComponent={renderBackdrop}
         handleIndicatorStyle={styles.handleIndicator}
         snapPoints={snapPoints}>
@@ -54,6 +55,7 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
 );
 
 const styles = StyleSheet.create({
+  background: { backgroundColor: 'white', elevation: 8 },
   inner: {
     padding: 24,
   },
