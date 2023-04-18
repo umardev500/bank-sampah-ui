@@ -1,7 +1,7 @@
 import { BottomSheetModal } from '@gorhom/bottom-sheet';
 import { useNavigation } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { TopUpListing } from 'components/molecules';
+import { Listing } from 'components/molecules';
 import { colors } from 'constants/colors';
 import { useBackdrop } from 'hooks/useBackdrop';
 import React, { useCallback, useMemo } from 'react';
@@ -37,15 +37,23 @@ export const TopUpBottomSheet = React.forwardRef<BottomSheetModal, Props>(
           <Text style={styles.label}>Pilih Layanan</Text>
 
           <View style={styles.list}>
-            <TopUpListing
+            <Listing
               icon={require('assets/icons/balance.png')}
-              onPress={handleBalanceClick}
               title="Saldo"
+              onPress={handleBalanceClick}
+              size={45}
             />
-            <TopUpListing icon={require('assets/icons/pln.png')} title="PLN" />
-            <TopUpListing
+            <Listing
+              icon={require('assets/icons/pln.png')}
+              title="PLN"
+              onPress={handleBalanceClick}
+              size={45}
+            />
+            <Listing
               icon={require('assets/icons/credit.png')}
               title="Pulsa"
+              onPress={handleBalanceClick}
+              size={45}
             />
           </View>
         </View>
