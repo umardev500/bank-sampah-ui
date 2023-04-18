@@ -17,3 +17,5 @@ export * from './transferReceiver';
 export * from './transferDetail';
 export * from './transactionDetailSheet';
 export * from './bottomSheet';
+export * from './transferDetailList';
+export * from './sheetBottom';
