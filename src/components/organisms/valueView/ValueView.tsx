@@ -1,9 +1,12 @@
 import {colors} from 'constants/colors';
-import React from 'react';
+import {toPrice} from 'helpers/toPrice';
+import React, {useState} from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const ValueView: React.FC = () => {
+  const [price] = useState(50000);
+
   return (
     <ScrollView>
       <View style={styles.inner}>
@@ -11,10 +14,15 @@ export const ValueView: React.FC = () => {
         <View style={styles.valueView}>
           <View style={styles.priceContainer}>
             <Text style={styles.currency}>Rp</Text>
-            <Text style={styles.price}>50.000</Text>
+            <Text style={styles.price}>{toPrice(price)}</Text>
           </View>
 
-          <Icon style={styles.closeIcon} name="close-circle" size={20} />
+          <Icon
+            onPress={() => console.log('click')}
+            style={styles.closeIcon}
+            name="close-circle"
+            size={20}
+          />
         </View>
         <Text style={styles.additionalFee}>+ Rp5.000 biaya admin</Text>
       </View>
@@ -45,6 +53,8 @@ const styles = StyleSheet.create({
   },
   priceContainer: {
     flexDirection: 'row',
+    overflow: 'hidden',
+    flex: 1,
   },
   currency: {
     fontSize: 28,
