@@ -10,3 +10,4 @@ export * from './transactionListing';
 export * from './sheetButttonGroup';
 export * from './notificationListing';
 export * from './inboxListing';
+export * from './settingListing';

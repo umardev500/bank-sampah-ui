@@ -21,3 +21,8 @@ export * from './transferDetailList';
 export * from './sheetBottom';
 export * from './notificationList';
 export * from './inboxList';
+export * from './settingList';
+export * from './settingListUser';
+export * from './settingListWallet';
+export * from './settingListNotification';
+export * from './settingListChat';
