@@ -1,3 +1,4 @@
+import { Avatar } from 'components/atoms';
 import { colors } from 'constants/colors';
 import React from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -16,7 +17,7 @@ export const InboxListing: React.FC<Props> = ({
 
   return (
     <TouchableOpacity style={styles.container}>
-      <Image style={styles.avatar} source={avatar} />
+      <Avatar source={avatar} />
 
       <View style={styles.right}>
         <View style={styles.rightTop}>
@@ -57,11 +58,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 16,
-  },
-  avatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 50,
   },
   right: {
     flex: 1,
