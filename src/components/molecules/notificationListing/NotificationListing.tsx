@@ -63,8 +63,8 @@ export const NotificationListing: React.FC<Props> = ({
 
 const styles = StyleSheet.create({
   container: {
-    paddingLeft: 24,
-    paddingRight: 24,
+    paddingLeft: 16,
+    paddingRight: 16,
     flexDirection: 'row',
     gap: 16,
     paddingTop: 16,
