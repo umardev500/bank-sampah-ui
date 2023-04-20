@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 export const SettingListNotification: React.FC = () => {
   return (
-    <SettingList containerStyle={styles.container} label="Dompet & Peyimpanan">
+    <SettingList containerStyle={styles.container} label="Notifikasi">
       <>
         <SettingListing title="Aktifkan Notifikasi" hasSwitch />
         <SettingListing title="Tes Notifikasi" />

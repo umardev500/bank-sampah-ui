@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 
 export const SettingListChat: React.FC = () => {
   return (
-    <SettingList containerStyle={styles.container} label="Dompet & Peyimpanan">
+    <SettingList containerStyle={styles.container} label="Chat">
       <>
         <SettingListing
           title="Aktifkan Chat"
