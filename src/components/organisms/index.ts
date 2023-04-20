@@ -20,3 +20,4 @@ export * from './bottomSheet';
 export * from './transferDetailList';
 export * from './sheetBottom';
 export * from './notificationList';
+export * from './inboxList';

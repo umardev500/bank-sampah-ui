@@ -9,3 +9,4 @@ export * from './paymentCardHeading';
 export * from './transactionListing';
 export * from './sheetButttonGroup';
 export * from './notificationListing';
+export * from './inboxListing';
