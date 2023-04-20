@@ -1,3 +1,4 @@
+import { Switch } from 'components/atoms';
 import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
@@ -6,9 +7,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 interface Props {
   title: string;
   subTitle?: string;
+  hasSwitch?: boolean;
 }
 
-export const SettingListing: React.FC<Props> = ({ title, subTitle }) => {
+export const SettingListing: React.FC<Props> = ({
+  title,
+  subTitle,
+  hasSwitch = false,
+}) => {
   const hasSubtitle = subTitle !== undefined;
 
   return (
@@ -21,7 +27,15 @@ export const SettingListing: React.FC<Props> = ({ title, subTitle }) => {
           </Text>
         ) : null}
       </View>
-      <Icon name="keyboard-arrow-right" size={24} color={colors.gray.gray400} />
+      {hasSwitch ? (
+        <Switch />
+      ) : (
+        <Icon
+          name="keyboard-arrow-right"
+          size={24}
+          color={colors.gray.gray400}
+        />
+      )}
     </View>
   );
 };

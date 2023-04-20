@@ -5,3 +5,4 @@ export * from './input';
 export * from './price';
 export * from './avatar';
 export * from './chat';
+export * from './switch';
