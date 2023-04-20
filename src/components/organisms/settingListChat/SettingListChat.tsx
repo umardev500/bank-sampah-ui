@@ -10,6 +10,7 @@ export const SettingListChat: React.FC = () => {
         <SettingListing
           title="Aktifkan Chat"
           subTitle="Tekoneksi dengan pengguna lainnya"
+          hasSwitch
         />
       </>
     </SettingList>

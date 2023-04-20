@@ -10,10 +10,12 @@ export const SettingListWallet: React.FC = () => {
         <SettingListing
           title="Tampilkan Nomor"
           subTitle="Nomor pengguna tampil di card"
+          hasSwitch
         />
         <SettingListing
           title="Tampilkan Saldo"
           subTitle="Nominal saldo akan ditampilkan di card"
+          hasSwitch
         />
       </>
     </SettingList>

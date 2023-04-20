@@ -7,7 +7,7 @@ export const SettingListNotification: React.FC = () => {
   return (
     <SettingList containerStyle={styles.container} label="Dompet & Peyimpanan">
       <>
-        <SettingListing title="Aktifkan Notifikasi" />
+        <SettingListing title="Aktifkan Notifikasi" hasSwitch />
         <SettingListing title="Tes Notifikasi" />
         <SettingListing
           title="Hapus Semua Notifikasi"
