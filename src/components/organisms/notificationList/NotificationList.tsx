@@ -32,7 +32,5 @@ export const NotificationList: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    paddingTop: 14,
-  },
+  container: {},
 });
