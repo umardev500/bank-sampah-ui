@@ -1,18 +1,12 @@
 import { SettingListing } from 'components/molecules';
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { useDerivedValue, useSharedValue } from 'react-native-reanimated';
+import { useSharedValue } from 'react-native-reanimated';
 import { SettingList } from '../settingList/SettingList';
 
 export const SettingListWallet: React.FC = () => {
   const numberShowingStatus = useSharedValue(false);
   const balanceShowingStatus = useSharedValue(false);
-
-  // watch for card showing number
-  useDerivedValue(() => {}, []);
-
-  // watch for showing balance
-  useDerivedValue(() => {}, []);
 
   // showing number card handler
   const showingCardNumberHandler = () => {
