@@ -2,7 +2,16 @@ import { Switch } from 'components/atoms';
 import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { SharedValue } from 'react-native-reanimated';
+import {
+  LongPressGestureHandler,
+  LongPressGestureHandlerGestureEvent,
+} from 'react-native-gesture-handler';
+import Animated, {
+  SharedValue,
+  useAnimatedGestureHandler,
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
@@ -10,6 +19,7 @@ interface Props {
   subTitle?: string;
   hasSwitch?: boolean;
   switchStatus?: SharedValue<boolean>;
+  onPress?: () => void;
 }
 
 export const SettingListing: React.FC<Props> = ({
@@ -17,29 +27,52 @@ export const SettingListing: React.FC<Props> = ({
   subTitle,
   hasSwitch = false,
   switchStatus,
+  onPress,
 }) => {
   const hasSubtitle = subTitle !== undefined;
+  const active = useSharedValue(false);
+
+  const tapGestureEvent =
+    useAnimatedGestureHandler<LongPressGestureHandlerGestureEvent>({
+      onStart: () => {
+        active.value = true;
+      },
+      onFinish: () => {
+        if (onPress !== undefined) {
+          onPress();
+        }
+        active.value = false;
+      },
+    });
+
+  const containerStyle = useAnimatedStyle(() => {
+    return {
+      backgroundColor: active.value ? colors.gray.gray100 : colors.white,
+    };
+  }, []);
 
   return (
-    <View style={styles.container}>
-      <View>
-        <Text style={styles.title}>{title}</Text>
-        {hasSubtitle ? (
-          <Text numberOfLines={1} style={styles.subTitle}>
-            {subTitle}
-          </Text>
-        ) : null}
-      </View>
-      {hasSwitch && switchStatus !== undefined ? (
-        <Switch status={switchStatus} />
-      ) : (
-        <Icon
-          name="keyboard-arrow-right"
-          size={24}
-          color={colors.gray.gray400}
-        />
-      )}
-    </View>
+    <LongPressGestureHandler onGestureEvent={tapGestureEvent}>
+      <Animated.View style={[styles.container, containerStyle]}>
+        <View>
+          <Text style={styles.title}>{title}</Text>
+          {hasSubtitle ? (
+            <Text numberOfLines={1} style={styles.subTitle}>
+              {subTitle}
+            </Text>
+          ) : null}
+        </View>
+        {hasSwitch && switchStatus !== undefined ? (
+          <Switch status={switchStatus} />
+        ) : (
+          <Icon
+            name="keyboard-arrow-right"
+            size={24}
+            color={colors.gray.gray400}
+          />
+        )}
+      </Animated.View>
+    </LongPressGestureHandler>
   );
 };
 
@@ -52,8 +85,9 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     paddingLeft: 14,
     paddingRight: 14,
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     borderRadius: 8,
+    marginBottom: 4,
   },
   title: {
     fontSize: 16,
