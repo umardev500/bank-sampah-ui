@@ -35,6 +35,7 @@ export const SettingListWallet: React.FC = () => {
           hasSwitch
           switchStatus={numberShowingStatus}
           onPress={showingCardNumberHandler}
+          disabledSwitchTouch
         />
         <SettingListing
           title="Tampilkan Saldo"
@@ -42,6 +43,7 @@ export const SettingListWallet: React.FC = () => {
           hasSwitch
           switchStatus={balanceShowingStatus}
           onPress={showingBalanceHandler}
+          disabledSwitchTouch
         />
       </>
     </SettingList>

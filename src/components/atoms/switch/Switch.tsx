@@ -16,9 +16,13 @@ const SWITCH_TRANSLATE_X = SWITCH_W - (2 * SWITCH_PADDING + BULLET_SIZE);
 
 interface Props {
   status: SharedValue<boolean>;
+  disabledSwitchTouch?: boolean;
 }
 
-export const Switch: React.FC<Props> = ({ status }) => {
+export const Switch: React.FC<Props> = ({
+  status,
+  disabledSwitchTouch = false,
+}) => {
   const switchTranslationX = useDerivedValue(() => {
     return status.value ? withTiming(SWITCH_TRANSLATE_X) : withTiming(0);
   }, [status.value]);
@@ -50,7 +54,9 @@ export const Switch: React.FC<Props> = ({ status }) => {
   }, []);
 
   return (
-    <TouchableWithoutFeedback onPress={handleClick}>
+    <TouchableWithoutFeedback
+      disabled={disabledSwitchTouch}
+      onPress={handleClick}>
       <Animated.View style={[styles.container, bgColorStyle]}>
         <Animated.View style={[styles.bullet, bulletStyles]} />
       </Animated.View>

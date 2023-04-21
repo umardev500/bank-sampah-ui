@@ -18,6 +18,7 @@ interface Props {
   title: string;
   subTitle?: string;
   hasSwitch?: boolean;
+  disabledSwitchTouch?: boolean;
   switchStatus?: SharedValue<boolean>;
   onPress?: () => void;
 }
@@ -26,6 +27,7 @@ export const SettingListing: React.FC<Props> = ({
   title,
   subTitle,
   hasSwitch = false,
+  disabledSwitchTouch = false,
   switchStatus,
   onPress,
 }) => {
@@ -63,7 +65,10 @@ export const SettingListing: React.FC<Props> = ({
           ) : null}
         </View>
         {hasSwitch && switchStatus !== undefined ? (
-          <Switch status={switchStatus} />
+          <Switch
+            disabledSwitchTouch={disabledSwitchTouch}
+            status={switchStatus}
+          />
         ) : (
           <Icon
             name="keyboard-arrow-right"
