@@ -2,6 +2,7 @@ import { Switch } from 'components/atoms';
 import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useSharedValue } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
@@ -16,6 +17,7 @@ export const SettingListing: React.FC<Props> = ({
   hasSwitch = false,
 }) => {
   const hasSubtitle = subTitle !== undefined;
+  const switchStatus = useSharedValue(false);
 
   return (
     <View style={styles.container}>
@@ -28,7 +30,7 @@ export const SettingListing: React.FC<Props> = ({
         ) : null}
       </View>
       {hasSwitch ? (
-        <Switch />
+        <Switch status={switchStatus} />
       ) : (
         <Icon
           name="keyboard-arrow-right"
