@@ -2,32 +2,23 @@ import { Switch } from 'components/atoms';
 import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { useDerivedValue, useSharedValue } from 'react-native-reanimated';
+import { SharedValue } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 interface Props {
   title: string;
   subTitle?: string;
   hasSwitch?: boolean;
-  defaultSwitchStatus?: boolean;
-  onToggle?: (status: boolean) => void;
+  switchStatus?: SharedValue<boolean>;
 }
 
 export const SettingListing: React.FC<Props> = ({
   title,
   subTitle,
   hasSwitch = false,
-  defaultSwitchStatus = false,
-  onToggle,
+  switchStatus,
 }) => {
   const hasSubtitle = subTitle !== undefined;
-  const switchStatus = useSharedValue(defaultSwitchStatus);
-
-  useDerivedValue(() => {
-    if (switchStatus.value !== defaultSwitchStatus && onToggle !== undefined) {
-      onToggle(switchStatus.value);
-    }
-  }, []);
 
   return (
     <View style={styles.container}>
@@ -39,7 +30,7 @@ export const SettingListing: React.FC<Props> = ({
           </Text>
         ) : null}
       </View>
-      {hasSwitch ? (
+      {hasSwitch && switchStatus !== undefined ? (
         <Switch status={switchStatus} />
       ) : (
         <Icon
