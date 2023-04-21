@@ -13,20 +13,18 @@ export const SettingListNotification: React.FC = () => {
 
   return (
     <SettingList containerStyle={styles.container} label="Notifikasi">
-      <>
-        <SettingListing
-          title="Aktifkan Notifikasi"
-          hasSwitch
-          disabledSwitchTouch
-          switchStatus={notifiactionStatus}
-          onPress={setNotificationHandler}
-        />
-        <SettingListing title="Tes Notifikasi" />
-        <SettingListing
-          title="Hapus Semua Notifikasi"
-          subTitle="Semua notifikasi terhapus permanen"
-        />
-      </>
+      <SettingListing
+        title="Aktifkan Notifikasi"
+        hasSwitch
+        disabledSwitchTouch
+        switchStatus={notifiactionStatus}
+        onPress={setNotificationHandler}
+      />
+      <SettingListing title="Tes Notifikasi" />
+      <SettingListing
+        title="Hapus Semua Notifikasi"
+        subTitle="Semua notifikasi terhapus permanen"
+      />
     </SettingList>
   );
 };

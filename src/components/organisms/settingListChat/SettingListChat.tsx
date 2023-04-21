@@ -13,16 +13,14 @@ export const SettingListChat: React.FC = () => {
 
   return (
     <SettingList containerStyle={styles.container} label="Chat">
-      <>
-        <SettingListing
-          title="Aktifkan Chat"
-          subTitle="Tekoneksi dengan pengguna lainnya"
-          hasSwitch
-          disabledSwitchTouch
-          switchStatus={chatStatus}
-          onPress={setChatHandler}
-        />
-      </>
+      <SettingListing
+        title="Aktifkan Chat"
+        subTitle="Tekoneksi dengan pengguna lainnya"
+        hasSwitch
+        disabledSwitchTouch
+        switchStatus={chatStatus}
+        onPress={setChatHandler}
+      />
     </SettingList>
   );
 };

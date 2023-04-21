@@ -22,24 +22,22 @@ export const SettingListWallet: React.FC = () => {
 
   return (
     <SettingList containerStyle={styles.container} label="Dompet & Peyimpanan">
-      <>
-        <SettingListing
-          title="Tampilkan Nomor"
-          subTitle="Nomor pengguna tampil di card"
-          hasSwitch
-          switchStatus={numberShowingStatus}
-          onPress={showingCardNumberHandler}
-          disabledSwitchTouch
-        />
-        <SettingListing
-          title="Tampilkan Saldo"
-          subTitle="Nominal saldo akan ditampilkan di card"
-          hasSwitch
-          switchStatus={balanceShowingStatus}
-          onPress={showingBalanceHandler}
-          disabledSwitchTouch
-        />
-      </>
+      <SettingListing
+        title="Tampilkan Nomor"
+        subTitle="Nomor pengguna tampil di card"
+        hasSwitch
+        switchStatus={numberShowingStatus}
+        onPress={showingCardNumberHandler}
+        disabledSwitchTouch
+      />
+      <SettingListing
+        title="Tampilkan Saldo"
+        subTitle="Nominal saldo akan ditampilkan di card"
+        hasSwitch
+        switchStatus={balanceShowingStatus}
+        onPress={showingBalanceHandler}
+        disabledSwitchTouch
+      />
     </SettingList>
   );
 };

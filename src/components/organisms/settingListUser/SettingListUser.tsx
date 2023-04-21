@@ -6,10 +6,8 @@ import { StyleSheet } from 'react-native';
 export const SettingListUser: React.FC = () => {
   return (
     <SettingList containerStyle={styles.container} label="Pengguna">
-      <>
-        <SettingListing title="Profile" />
-        <SettingListing title="Pengaturan Alamat" />
-      </>
+      <SettingListing title="Profile" />
+      <SettingListing title="Pengaturan Alamat" />
     </SettingList>
   );
 };

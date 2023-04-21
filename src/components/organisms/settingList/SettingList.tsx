@@ -4,7 +4,7 @@ import { StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 
 interface Props {
   label: string;
-  children: React.ReactElement;
+  children?: React.ReactElement[] | React.ReactElement;
   containerStyle?: StyleProp<ViewStyle>;
 }
 
@@ -33,5 +33,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.white,
     padding: 4,
     borderRadius: 8,
+    gap: 4,
   },
 });
