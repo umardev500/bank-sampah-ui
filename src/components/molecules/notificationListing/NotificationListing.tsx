@@ -38,6 +38,7 @@ export const NotificationListing: React.FC<Props> = ({
 
   return (
     <TouchableOpacity
+      activeOpacity={0.5}
       onPress={onPress}
       style={[styles.container, isUnread ? styles.unread : {}]}>
       <Image style={styles.icon} source={src} />
