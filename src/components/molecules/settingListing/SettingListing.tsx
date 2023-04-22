@@ -56,6 +56,9 @@ export const SettingListing: React.FC<Props> = ({
       onActive: () => {
         active.value = true;
       },
+      onCancel: () => {
+        active.value = false;
+      },
       onEnd: () => {
         active.value = false;
         if (onPress !== undefined) {
