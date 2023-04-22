@@ -1,6 +1,7 @@
 import { Avatar, ChatRightBottom, ChatRightTop } from 'components/atoms';
+import { colors } from 'constants/colors';
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableHighlight, View } from 'react-native';
 import { Inbox } from 'types/inbox';
 
 interface Props extends Inbox {}
@@ -13,14 +14,19 @@ export const InboxListing: React.FC<Props> = ({
   createdAt,
 }) => {
   return (
-    <TouchableOpacity style={styles.container}>
-      <Avatar source={avatar} />
+    <TouchableHighlight
+      activeOpacity={1}
+      underlayColor={colors.gray.gray100}
+      onPress={() => {}}>
+      <View style={styles.container}>
+        <Avatar source={avatar} />
 
-      <View style={styles.right}>
-        <ChatRightTop name={name} status={status} createdAt={createdAt} />
-        <ChatRightBottom text={text} status={status} avatar={avatar} />
+        <View style={styles.right}>
+          <ChatRightTop name={name} status={status} createdAt={createdAt} />
+          <ChatRightBottom text={text} status={status} avatar={avatar} />
+        </View>
       </View>
-    </TouchableOpacity>
+    </TouchableHighlight>
   );
 };
 
