@@ -3,6 +3,8 @@ import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
+  LongPressGestureHandler,
+  LongPressGestureHandlerGestureEvent,
   TapGestureHandler,
   TapGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
@@ -40,13 +42,25 @@ export const SettingListing: React.FC<Props> = ({
         active.value = true;
       },
       onActive: () => {
-        console.log('active');
         if (onPress !== undefined) {
           onPress();
         }
       },
       onFinish: () => {
         active.value = false;
+      },
+    });
+
+  const longGestureEvent =
+    useAnimatedGestureHandler<LongPressGestureHandlerGestureEvent>({
+      onActive: () => {
+        active.value = true;
+      },
+      onEnd: () => {
+        active.value = false;
+        if (onPress !== undefined) {
+          onPress();
+        }
       },
     });
 
@@ -57,30 +71,34 @@ export const SettingListing: React.FC<Props> = ({
   }, []);
 
   return (
-    <TapGestureHandler onGestureEvent={tapGestureEvent}>
-      <Animated.View style={[styles.container, containerStyle]}>
-        <View>
-          <Text style={styles.title}>{title}</Text>
-          {hasSubtitle ? (
-            <Text numberOfLines={1} style={styles.subTitle}>
-              {subTitle}
-            </Text>
-          ) : null}
-        </View>
-        {hasSwitch && switchStatus !== undefined ? (
-          <Switch
-            disabledSwitchTouch={disabledSwitchTouch}
-            status={switchStatus}
-          />
-        ) : (
-          <Icon
-            name="keyboard-arrow-right"
-            size={24}
-            color={colors.gray.gray400}
-          />
-        )}
+    <LongPressGestureHandler onGestureEvent={longGestureEvent}>
+      <Animated.View>
+        <TapGestureHandler onGestureEvent={tapGestureEvent}>
+          <Animated.View style={[styles.container, containerStyle]}>
+            <View>
+              <Text style={styles.title}>{title}</Text>
+              {hasSubtitle ? (
+                <Text numberOfLines={1} style={styles.subTitle}>
+                  {subTitle}
+                </Text>
+              ) : null}
+            </View>
+            {hasSwitch && switchStatus !== undefined ? (
+              <Switch
+                disabledSwitchTouch={disabledSwitchTouch}
+                status={switchStatus}
+              />
+            ) : (
+              <Icon
+                name="keyboard-arrow-right"
+                size={24}
+                color={colors.gray.gray400}
+              />
+            )}
+          </Animated.View>
+        </TapGestureHandler>
       </Animated.View>
-    </TapGestureHandler>
+    </LongPressGestureHandler>
   );
 };
 
