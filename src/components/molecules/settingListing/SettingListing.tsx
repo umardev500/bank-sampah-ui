@@ -3,8 +3,8 @@ import { colors } from 'constants/colors';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
-  LongPressGestureHandler,
-  LongPressGestureHandlerGestureEvent,
+  TapGestureHandler,
+  TapGestureHandlerGestureEvent,
 } from 'react-native-gesture-handler';
 import Animated, {
   SharedValue,
@@ -35,14 +35,17 @@ export const SettingListing: React.FC<Props> = ({
   const active = useSharedValue(false);
 
   const tapGestureEvent =
-    useAnimatedGestureHandler<LongPressGestureHandlerGestureEvent>({
+    useAnimatedGestureHandler<TapGestureHandlerGestureEvent>({
       onStart: () => {
         active.value = true;
       },
-      onFinish: () => {
+      onActive: () => {
+        console.log('active');
         if (onPress !== undefined) {
           onPress();
         }
+      },
+      onFinish: () => {
         active.value = false;
       },
     });
@@ -54,7 +57,7 @@ export const SettingListing: React.FC<Props> = ({
   }, []);
 
   return (
-    <LongPressGestureHandler onGestureEvent={tapGestureEvent}>
+    <TapGestureHandler onGestureEvent={tapGestureEvent}>
       <Animated.View style={[styles.container, containerStyle]}>
         <View>
           <Text style={styles.title}>{title}</Text>
@@ -77,7 +80,7 @@ export const SettingListing: React.FC<Props> = ({
           />
         )}
       </Animated.View>
-    </LongPressGestureHandler>
+    </TapGestureHandler>
   );
 };
 
